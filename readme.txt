@@ -1,5 +1,5 @@
 === Call To Action Block ===
-Contributors:      The WordPress Contributors
+Contributors:      hazrathali
 Tags:              block
 Tested up to:      6.7
 Stable tag:        0.1.0
@@ -10,14 +10,30 @@ Example block scaffolded with Create Block tool.
 
 == Description ==
 
-This is the long description. No limit, and you can use Markdown (as well as in the following sections).
+A powerful and customizable Gutenberg block that helps you create attention-grabbing <code>call-to-action</code> sections with ease. Designed for modern WordPress websites, this block allows you to showcase messages, buttons, and offers that drive user engagement and conversions.
 
 For backwards compatibility, if this section is missing, the full length of the short description will be used, and
 Markdown parsed.
 
 == Installation ==
 
-This section describes how to install the plugin and get it working.
+Follow these steps to install and use the Call To Action block:
+
+1. In your WordPress admin, go to `Plugins` → `Add New` → `Upload Plugin` and select the `call-to-action-block.zip` file.
+2. Click `Install Now`, then `Activate`.
+3. Alternatively, manually upload the `call-to-action-block` folder to `/wp-content/plugins/` via SFTP/FTP and activate it.
+4. Open any post or page in the Block Editor (Gutenberg), click the `+` inserter, and search for `Call To Action`.
+5. Add the block and configure its settings (title, description, button text, link URL, alignment, and styles).
+6. Update or publish the post/page to see the block on the front end.
+
+Requirements:
+- WordPress 6.0+ and PHP 7.4+.
+- The Block Editor (Gutenberg) enabled.
+
+Troubleshooting:
+- If assets don’t load, clear any caching and hard-refresh the browser.
+- If you are working from source, run `npm install` and `npm run build`, then ensure the contents of the `build/` directory are present.
+
 
 e.g.
 

@@ -2,7 +2,7 @@
 import { createRoot } from 'react-dom/client';
 
 import './style.scss';
-import BlockName from './BlockMain';
+import BlockName from './Components/Frontend/BlockMain';
 
 document.addEventListener('DOMContentLoaded', () => {
 	const blockNameEls = document.querySelectorAll('.wp-block-create-block-call-to-action-block');

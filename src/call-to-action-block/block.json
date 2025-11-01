@@ -33,6 +33,64 @@
 			"type": "string",
 			"default": "#"
 		},
+		"sectionPadding": {
+			"type": "object",
+			"default": {
+				"desktop": {
+					"top": "0",
+					"right": "0",
+					"bottom": "0",
+					"left": "0",
+					"unit": "px",
+					"isLinked": true
+				},
+				"tablet": {
+					"top": "0",
+					"right": "0",
+					"bottom": "0",
+					"left": "0",
+					"unit": "px",
+					"isLinked": true
+				},
+				"mobile": {
+					"top": "0",
+					"right": "0",
+					"bottom": "0",
+					"left": "0",
+					"unit": "px",
+					"isLinked": true
+				}
+			}
+		},
+		"sectionMargin": {
+			"type": "object",
+			"default": {
+				"desktop": {
+					"top": 0,
+					"right": 0,
+					"bottom": 0,
+					"left": 0,
+					"unit": "px",
+					"isLinked": true
+				},
+				"tablet": {
+					"top": 0,
+					"right": 0,
+					"bottom": 0,
+					"left": 0,
+					"unit": "px",
+					"isLinked": true
+				},
+				"mobile": {
+					"top": 0,
+					"right": 0,
+					"bottom": 0,
+					"left": 0,
+					"unit": "px",
+					"isLinked": true
+				}
+			}
+		},
 		"headingFontFamily": {
 			"type": "string",
 			"default": ""
@@ -126,6 +184,26 @@
 					"isLinked": true
 				}
 			}
+		},
+		"bgType": {
+			"type": "string",
+			"default": "color"
+		},
+		"bgColor": {
+			"type": "string",
+			"default": "#f5f5f5"
+		},
+		"bgGradient1": {
+			"type": "string",
+			"default": ""
+		},
+		"bgGradient2": {
+			"type": "string",
+			"default": ""
+		},
+		"bgGradientAngle": {
+			"type": "number",
+			"default": 90
 		}
 	},
 	"supports": {
@@ -134,12 +212,7 @@
 			"left",
 			"right",
 			"full"
-		],
-		"color": {
-			"background": true,
-			"gradients": true,
-			"text": false
-		}
+		]
 	},
 	"textdomain": "call-to-action-block",
 	"editorScript": "file:./index.js",

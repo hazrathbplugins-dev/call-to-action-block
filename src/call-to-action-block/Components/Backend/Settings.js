@@ -4,8 +4,9 @@ import { PanelBody, SelectControl, TextControl } from '@wordpress/components';
 import { TypographyControl } from './Style/TypographyControl';
 import ColorControl from './Style/ColorControl';
 import DimensionControl from './Style/DimensionControl';
+import BackgroundColor from './Style/BackgroundColor';
 function Settings({ attributes, setAttributes }) {
-    const { headingTag, alignment, headingColor, buttonText, buttonUrl, headingPadding, headingMargin } = attributes;
+    const { headingTag, alignment, headingColor, buttonText, buttonUrl, headingPadding, headingMargin, sectionPadding, sectionMargin } = attributes;
     {/* Inspector Settings */ }
     return (
         <>
@@ -57,6 +58,19 @@ function Settings({ attributes, setAttributes }) {
                 </PanelBody>
             </InspectorControls>
             <InspectorControls group="styles">
+                <PanelBody title={__('Section Layout', 'call-to-action-block')} initialOpen={true}>
+                    <BackgroundColor attributes={attributes} setAttributes={setAttributes} />
+                    <DimensionControl
+                        label="Padding"
+                        value={sectionPadding}
+                        onChange={(newVal) => setAttributes({ sectionPadding: newVal })}
+                    />
+                    <DimensionControl
+                        label="Margin"
+                        value={sectionMargin}
+                        onChange={(newVal) => setAttributes({ sectionMargin: newVal })}
+                    />
+                </PanelBody>
                 <PanelBody title={__('Button', 'call-to-action-block')} initialOpen={false}>
                     <TypographyControl attributes={attributes} setAttributes={setAttributes} prefix="button" />
                     <DimensionControl
@@ -69,6 +83,7 @@ function Settings({ attributes, setAttributes }) {
                         value={headingMargin}
                         onChange={(newVal) => setAttributes({ headingMargin: newVal })}
                     />
+                    <BackgroundColor attributes={attributes} setAttributes={setAttributes} />
                 </PanelBody>
             </InspectorControls>
         </>

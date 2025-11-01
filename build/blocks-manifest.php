@@ -38,6 +38,64 @@ return array(
 				'type' => 'string',
 				'default' => '#'
 			),
+			'sectionPadding' => array(
+				'type' => 'object',
+				'default' => array(
+					'desktop' => array(
+						'top' => '0',
+						'right' => '0',
+						'bottom' => '0',
+						'left' => '0',
+						'unit' => 'px',
+						'isLinked' => true
+					),
+					'tablet' => array(
+						'top' => '0',
+						'right' => '0',
+						'bottom' => '0',
+						'left' => '0',
+						'unit' => 'px',
+						'isLinked' => true
+					),
+					'mobile' => array(
+						'top' => '0',
+						'right' => '0',
+						'bottom' => '0',
+						'left' => '0',
+						'unit' => 'px',
+						'isLinked' => true
+					)
+				)
+			),
+			'sectionMargin' => array(
+				'type' => 'object',
+				'default' => array(
+					'desktop' => array(
+						'top' => 0,
+						'right' => 0,
+						'bottom' => 0,
+						'left' => 0,
+						'unit' => 'px',
+						'isLinked' => true
+					),
+					'tablet' => array(
+						'top' => 0,
+						'right' => 0,
+						'bottom' => 0,
+						'left' => 0,
+						'unit' => 'px',
+						'isLinked' => true
+					),
+					'mobile' => array(
+						'top' => 0,
+						'right' => 0,
+						'bottom' => 0,
+						'left' => 0,
+						'unit' => 'px',
+						'isLinked' => true
+					)
+				)
+			),
 			'headingFontFamily' => array(
 				'type' => 'string',
 				'default' => ''
@@ -131,6 +189,26 @@ return array(
 						'isLinked' => true
 					)
 				)
+			),
+			'bgType' => array(
+				'type' => 'string',
+				'default' => 'color'
+			),
+			'bgColor' => array(
+				'type' => 'string',
+				'default' => '#f5f5f5'
+			),
+			'bgGradient1' => array(
+				'type' => 'string',
+				'default' => ''
+			),
+			'bgGradient2' => array(
+				'type' => 'string',
+				'default' => ''
+			),
+			'bgGradientAngle' => array(
+				'type' => 'number',
+				'default' => 90
 			)
 		),
 		'supports' => array(
@@ -139,11 +217,6 @@ return array(
 				'left',
 				'right',
 				'full'
-			),
-			'color' => array(
-				'background' => true,
-				'gradients' => true,
-				'text' => false
 			)
 		),
 		'textdomain' => 'call-to-action-block',

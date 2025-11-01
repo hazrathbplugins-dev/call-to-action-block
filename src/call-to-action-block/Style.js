@@ -1,5 +1,5 @@
 function Style({ attributes }) {
-    const { headingColor, headingPadding, headingMargin } = attributes;
+    const { headingColor, headingPadding, headingMargin, sectionPadding, sectionMargin } = attributes;
 
     const headingStyle = {
         fontFamily: attributes.headingFontFamily,
@@ -78,7 +78,9 @@ function Style({ attributes }) {
     return (
         <style>
             {`
-
+                .wp-block-create-block-call-to-action-block {
+                
+                }
                 /* Main Heading Styles */
                 .hero-content .main-heading {
                     color: ${headingColor};

@@ -71,8 +71,15 @@ function Settings({ attributes, setAttributes }) {
                         onChange={(newVal) => setAttributes({ sectionMargin: newVal })}
                     />
                 </PanelBody>
-                <PanelBody title={__('Button', 'call-to-action-block')} initialOpen={false}>
-                    <TypographyControl attributes={attributes} setAttributes={setAttributes} prefix="button" />
+                <PanelBody title={__('Heading Styles', 'call-to-action-block')} initialOpen={false}>
+                    <TypographyControl attributes={attributes} setAttributes={setAttributes} prefix="heading" />
+                    <ColorControl
+                        label={__('Color', 'call-to-action-block')}
+                        value={headingColor}
+                        onChange={(color) => setAttributes({ headingColor: color })}
+                        defaultColor=""
+                        className="color-picker-control"
+                    />
                     <DimensionControl
                         label="Padding"
                         value={headingPadding}
@@ -83,7 +90,53 @@ function Settings({ attributes, setAttributes }) {
                         value={headingMargin}
                         onChange={(newVal) => setAttributes({ headingMargin: newVal })}
                     />
-                    <BackgroundColor attributes={attributes} setAttributes={setAttributes} />
+                </PanelBody>
+                <PanelBody title={__('Description Styles', 'call-to-action-block')} initialOpen={false}>
+                    <TypographyControl attributes={attributes} setAttributes={setAttributes} prefix="description" />
+                    <ColorControl
+                        label={__('Color', 'call-to-action-block')}
+                        value={attributes.descriptionColor}
+                        onChange={(color) => setAttributes({ descriptionColor: color })}
+                        defaultColor=""
+                        className="color-picker-control"
+                    />
+                    <DimensionControl
+                        label="Padding"
+                        value={attributes.descriptionPadding}
+                        onChange={(newVal) => setAttributes({ descriptionPadding: newVal })}
+                    />
+                    <DimensionControl
+                        label="Margin"
+                        value={attributes.descriptionMargin}
+                        onChange={(newVal) => setAttributes({ descriptionMargin: newVal })}
+                    />
+                </PanelBody>
+                <PanelBody title={__('Button Styles', 'call-to-action-block')} initialOpen={false}>
+                    <TypographyControl attributes={attributes} setAttributes={setAttributes} prefix="button" />
+                    <ColorControl
+                        label={__('Text Color', 'call-to-action-block')}
+                        value={attributes.buttonTextColor}
+                        onChange={(color) => setAttributes({ buttonTextColor: color })}
+                        defaultColor=""
+                        className="color-picker-control"
+                    />
+                    <ColorControl
+                        label={__('Background Color', 'call-to-action-block')}
+                        value={attributes.buttonBgColor}
+                        onChange={(color) => setAttributes({ buttonBgColor: color })}
+                        defaultColor=""
+                        className="color-picker-control"
+                    />
+                    <DimensionControl
+                        label="Padding"
+                        value={attributes.buttonPadding}
+                        onChange={(newVal) => setAttributes({ buttonPadding: newVal })}
+                    />
+                    <DimensionControl
+                        label="Margin"
+                        value={attributes.buttonMargin}
+                        onChange={(newVal) => setAttributes({ buttonMargin: newVal })}
+                    />
                 </PanelBody>
             </InspectorControls>
         </>

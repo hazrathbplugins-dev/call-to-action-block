@@ -142,26 +142,26 @@ return array(
 					'desktop' => array(
 						'top' => '0',
 						'right' => '0',
-						'bottom' => '0',
+						'bottom' => '10',
 						'left' => '0',
 						'unit' => 'px',
-						'isLinked' => true
+						'isLinked' => false
 					),
 					'tablet' => array(
 						'top' => '0',
 						'right' => '0',
-						'bottom' => '0',
+						'bottom' => '10',
 						'left' => '0',
 						'unit' => 'px',
-						'isLinked' => true
+						'isLinked' => false
 					),
 					'mobile' => array(
 						'top' => '0',
 						'right' => '0',
-						'bottom' => '0',
+						'bottom' => '10',
 						'left' => '0',
 						'unit' => 'px',
-						'isLinked' => true
+						'isLinked' => false
 					)
 				)
 			),
@@ -174,7 +174,7 @@ return array(
 						'bottom' => 0,
 						'left' => 0,
 						'unit' => 'px',
-						'isLinked' => true
+						'isLinked' => false
 					),
 					'tablet' => array(
 						'top' => 0,
@@ -182,7 +182,7 @@ return array(
 						'bottom' => 0,
 						'left' => 0,
 						'unit' => 'px',
-						'isLinked' => true
+						'isLinked' => false
 					),
 					'mobile' => array(
 						'top' => 0,
@@ -190,7 +190,7 @@ return array(
 						'bottom' => 0,
 						'left' => 0,
 						'unit' => 'px',
-						'isLinked' => true
+						'isLinked' => false
 					)
 				)
 			),
@@ -212,7 +212,7 @@ return array(
 			),
 			'descriptionFontWeight' => array(
 				'type' => 'string',
-				'default' => '700'
+				'default' => ''
 			),
 			'descriptionTextTransform' => array(
 				'type' => 'string',
@@ -236,26 +236,26 @@ return array(
 					'desktop' => array(
 						'top' => '0',
 						'right' => '0',
-						'bottom' => '0',
+						'bottom' => '30',
 						'left' => '0',
 						'unit' => 'px',
-						'isLinked' => true
+						'isLinked' => false
 					),
 					'tablet' => array(
 						'top' => '0',
 						'right' => '0',
-						'bottom' => '0',
+						'bottom' => '30',
 						'left' => '0',
 						'unit' => 'px',
-						'isLinked' => true
+						'isLinked' => false
 					),
 					'mobile' => array(
 						'top' => '0',
 						'right' => '0',
-						'bottom' => '0',
+						'bottom' => '30',
 						'left' => '0',
 						'unit' => 'px',
-						'isLinked' => true
+						'isLinked' => false
 					)
 				)
 			),
@@ -294,11 +294,11 @@ return array(
 			),
 			'buttonFontSizeDesktop' => array(
 				'type' => 'number',
-				'default' => 18
+				'default' => 16
 			),
 			'buttonFontSizeTablet' => array(
 				'type' => 'number',
-				'default' => 18
+				'default' => 16
 			),
 			'buttonFontSizeMobile' => array(
 				'type' => 'number',
@@ -306,7 +306,7 @@ return array(
 			),
 			'buttonFontWeight' => array(
 				'type' => 'string',
-				'default' => '700'
+				'default' => ''
 			),
 			'buttonTextTransform' => array(
 				'type' => 'string',
@@ -328,28 +328,28 @@ return array(
 				'type' => 'object',
 				'default' => array(
 					'desktop' => array(
-						'top' => '0',
-						'right' => '0',
-						'bottom' => '0',
-						'left' => '0',
+						'top' => '12',
+						'right' => '21',
+						'bottom' => '12',
+						'left' => '21',
 						'unit' => 'px',
-						'isLinked' => true
+						'isLinked' => false
 					),
 					'tablet' => array(
-						'top' => '0',
-						'right' => '0',
-						'bottom' => '0',
-						'left' => '0',
+						'top' => '12',
+						'right' => '21',
+						'bottom' => '12',
+						'left' => '21',
 						'unit' => 'px',
-						'isLinked' => true
+						'isLinked' => false
 					),
 					'mobile' => array(
-						'top' => '0',
-						'right' => '0',
-						'bottom' => '0',
-						'left' => '0',
+						'top' => '12',
+						'right' => '21',
+						'bottom' => '12',
+						'left' => '21',
 						'unit' => 'px',
-						'isLinked' => true
+						'isLinked' => false
 					)
 				)
 			),
@@ -362,7 +362,7 @@ return array(
 						'bottom' => 0,
 						'left' => 0,
 						'unit' => 'px',
-						'isLinked' => true
+						'isLinked' => false
 					),
 					'tablet' => array(
 						'top' => 0,
@@ -370,7 +370,7 @@ return array(
 						'bottom' => 0,
 						'left' => 0,
 						'unit' => 'px',
-						'isLinked' => true
+						'isLinked' => false
 					),
 					'mobile' => array(
 						'top' => 0,
@@ -378,9 +378,17 @@ return array(
 						'bottom' => 0,
 						'left' => 0,
 						'unit' => 'px',
-						'isLinked' => true
+						'isLinked' => false
 					)
 				)
+			),
+			'buttonTextColor' => array(
+				'type' => 'string',
+				'default' => ''
+			),
+			'buttonBgColor' => array(
+				'type' => 'string',
+				'default' => ''
 			),
 			'bgType' => array(
 				'type' => 'string',

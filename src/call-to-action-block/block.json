@@ -137,26 +137,26 @@
 				"desktop": {
 					"top": "0",
 					"right": "0",
-					"bottom": "0",
+					"bottom": "10",
 					"left": "0",
 					"unit": "px",
-					"isLinked": true
+					"isLinked": false
 				},
 				"tablet": {
 					"top": "0",
 					"right": "0",
-					"bottom": "0",
+					"bottom": "10",
 					"left": "0",
 					"unit": "px",
-					"isLinked": true
+					"isLinked": false
 				},
 				"mobile": {
 					"top": "0",
 					"right": "0",
-					"bottom": "0",
+					"bottom": "10",
 					"left": "0",
 					"unit": "px",
-					"isLinked": true
+					"isLinked": false
 				}
 			}
 		},
@@ -169,7 +169,7 @@
 					"bottom": 0,
 					"left": 0,
 					"unit": "px",
-					"isLinked": true
+					"isLinked": false
 				},
 				"tablet": {
 					"top": 0,
@@ -177,7 +177,7 @@
 					"bottom": 0,
 					"left": 0,
 					"unit": "px",
-					"isLinked": true
+					"isLinked": false
 				},
 				"mobile": {
 					"top": 0,
@@ -185,7 +185,7 @@
 					"bottom": 0,
 					"left": 0,
 					"unit": "px",
-					"isLinked": true
+					"isLinked": false
 				}
 			}
 		},
@@ -207,7 +207,7 @@
 		},
 		"descriptionFontWeight": {
 			"type": "string",
-			"default": "700"
+			"default": ""
 		},
 		"descriptionTextTransform": {
 			"type": "string",
@@ -231,26 +231,26 @@
 				"desktop": {
 					"top": "0",
 					"right": "0",
-					"bottom": "0",
+					"bottom": "30",
 					"left": "0",
 					"unit": "px",
-					"isLinked": true
+					"isLinked": false
 				},
 				"tablet": {
 					"top": "0",
 					"right": "0",
-					"bottom": "0",
+					"bottom": "30",
 					"left": "0",
 					"unit": "px",
-					"isLinked": true
+					"isLinked": false
 				},
 				"mobile": {
 					"top": "0",
 					"right": "0",
-					"bottom": "0",
+					"bottom": "30",
 					"left": "0",
 					"unit": "px",
-					"isLinked": true
+					"isLinked": false
 				}
 			}
 		},
@@ -289,11 +289,11 @@
 		},
 		"buttonFontSizeDesktop": {
 			"type": "number",
-			"default": 18
+			"default": 16
 		},
 		"buttonFontSizeTablet": {
 			"type": "number",
-			"default": 18
+			"default": 16
 		},
 		"buttonFontSizeMobile": {
 			"type": "number",
@@ -301,7 +301,7 @@
 		},
 		"buttonFontWeight": {
 			"type": "string",
-			"default": "700"
+			"default": ""
 		},
 		"buttonTextTransform": {
 			"type": "string",
@@ -323,28 +323,28 @@
 			"type": "object",
 			"default": {
 				"desktop": {
-					"top": "0",
-					"right": "0",
-					"bottom": "0",
-					"left": "0",
+					"top": "12",
+					"right": "21",
+					"bottom": "12",
+					"left": "21",
 					"unit": "px",
-					"isLinked": true
+					"isLinked": false
 				},
 				"tablet": {
-					"top": "0",
-					"right": "0",
-					"bottom": "0",
-					"left": "0",
+					"top": "12",
+					"right": "21",
+					"bottom": "12",
+					"left": "21",
 					"unit": "px",
-					"isLinked": true
+					"isLinked": false
 				},
 				"mobile": {
-					"top": "0",
-					"right": "0",
-					"bottom": "0",
-					"left": "0",
+					"top": "12",
+					"right": "21",
+					"bottom": "12",
+					"left": "21",
 					"unit": "px",
-					"isLinked": true
+					"isLinked": false
 				}
 			}
 		},
@@ -357,7 +357,7 @@
 					"bottom": 0,
 					"left": 0,
 					"unit": "px",
-					"isLinked": true
+					"isLinked": false
 				},
 				"tablet": {
 					"top": 0,
@@ -365,7 +365,7 @@
 					"bottom": 0,
 					"left": 0,
 					"unit": "px",
-					"isLinked": true
+					"isLinked": false
 				},
 				"mobile": {
 					"top": 0,
@@ -373,9 +373,17 @@
 					"bottom": 0,
 					"left": 0,
 					"unit": "px",
-					"isLinked": true
+					"isLinked": false
 				}
 			}
+		},
+		"buttonTextColor": {
+			"type": "string",
+			"default": ""
+		},
+		"buttonBgColor": {
+			"type": "string",
+			"default": ""
 		},
 		"bgType": {
 			"type": "string",

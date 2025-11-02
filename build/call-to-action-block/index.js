@@ -727,6 +727,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 const TypographyControl = ({
   attributes,
   setAttributes,
@@ -773,13 +774,24 @@ const TypographyControl = ({
         LineHeightTablet: 1.2,
         LineHeightMobile: 1.3
       },
-      subHeading: {
+      description: {
         FontFamily: '',
-        FontWeight: '400',
+        FontWeight: ' ',
+        TextTransform: 'none',
+        FontSizeDesktop: 18,
+        FontSizeTablet: 18,
+        FontSizeMobile: 16,
+        LineHeightDesktop: 1.5,
+        LineHeightTablet: 1.6,
+        LineHeightMobile: 1.7
+      },
+      button: {
+        FontFamily: '',
+        FontWeight: ' ',
         TextTransform: 'none',
         FontSizeDesktop: 16,
-        FontSizeTablet: 14,
-        FontSizeMobile: 12,
+        FontSizeTablet: 16,
+        FontSizeMobile: 16,
         LineHeightDesktop: 1.5,
         LineHeightTablet: 1.6,
         LineHeightMobile: 1.7
@@ -1134,9 +1146,9 @@ __webpack_require__.r(__webpack_exports__);
  * Style.jsx
  * -------------------------------------------------
  * Generates <style> tag with:
- *   • Heading typography, color, padding, margin (desktop / tablet / mobile)
- *   • Section background (solid color OR gradient)
- *   • Section padding & margin (desktop / tablet / mobile)
+ *   • Heading, Description, Button: typography, colour, padding, margin (responsive)
+ *   • Section background (solid colour OR gradient)
+ *   • Section padding & margin (responsive)
  */
 
 
@@ -1179,11 +1191,11 @@ const Style = ({
     buttonLineHeightMobile,
     buttonPadding,
     buttonMargin,
+    buttonTextColor,
+    buttonBgColor,
     bgType,
     bgColor,
-    // hex string
     bgGradient1,
-    // gradient object
     bgGradient2,
     bgGradientAngle,
     sectionPadding,
@@ -1191,84 +1203,90 @@ const Style = ({
   } = attributes;
 
   /* ------------------------------------------------------------------
-     1. Helper – turn a value + unit into a CSS string (e.g. 20 → "20px")
+     HELPER: value + unit → CSS string (e.g. 20 → "20px")
      ------------------------------------------------------------------ */
-  const formatSide = (val, unit) => {
-    if (val === undefined || val === null || val === '') return `0${unit || 'px'}`;
+  const formatSide = (val, unit = 'px') => {
+    if (val === undefined || val === null || val === '') return `0${unit}`;
     const v = String(val).trim();
-    if (/\d\s*(px|%|em|rem|vh|vw)$/.test(v)) return v; // already has unit
-    return `${v}${unit || 'px'}`;
+    return /\d\s*(px|%|em|rem|vh|vw)$/.test(v) ? v : `${v}${unit}`;
   };
 
   /* ------------------------------------------------------------------
-     2. HEADING – responsive padding / margin
+     HELPER: responsive padding / margin strings (supports isLinked)
      ------------------------------------------------------------------ */
-  const padH = headingPadding || {};
-  const marH = headingMargin || {};
-  const padDesk = padH.desktop || {};
-  const padTab = padH.tablet || {};
-  const padMob = padH.mobile || {};
-  const marDesk = marH.desktop || {};
-  const marTab = marH.tablet || {};
-  const marMob = marH.mobile || {};
-  const uPadDesk = padDesk.unit || 'px';
-  const uPadTab = padTab.unit || uPadDesk;
-  const uPadMob = padMob.unit || uPadTab;
-  const uMarDesk = marDesk.unit || 'px';
-  const uMarTab = marTab.unit || uMarDesk;
-  const uMarMob = marMob.unit || uMarTab;
-  const headingPaddingDesktop = [formatSide(padDesk.top, uPadDesk), formatSide(padDesk.right, uPadDesk), formatSide(padDesk.bottom, uPadDesk), formatSide(padDesk.left, uPadDesk)].join(' ');
-  const headingPaddingTablet = [formatSide(padTab.top, uPadTab), formatSide(padTab.right, uPadTab), formatSide(padTab.bottom, uPadTab), formatSide(padTab.left, uPadTab)].join(' ');
-  const headingPaddingMobile = [formatSide(padMob.top, uPadMob), formatSide(padMob.right, uPadMob), formatSide(padMob.bottom, uPadMob), formatSide(padMob.left, uPadMob)].join(' ');
-  const headingMarginDesktop = [formatSide(marDesk.top, uMarDesk), formatSide(marDesk.right, uMarDesk), formatSide(marDesk.bottom, uMarDesk), formatSide(marDesk.left, uMarDesk)].join(' ');
-  const headingMarginTablet = [formatSide(marTab.top, uMarTab), formatSide(marTab.right, uMarTab), formatSide(marTab.bottom, uMarTab), formatSide(marTab.left, uMarTab)].join(' ');
-  const headingMarginMobile = [formatSide(marMob.top, uMarMob), formatSide(marMob.right, uMarMob), formatSide(marMob.bottom, uMarMob), formatSide(marMob.left, uMarMob)].join(' ');
+  const getResponsive = obj => {
+    const desktop = obj?.desktop || {};
+    const tablet = obj?.tablet || {};
+    const mobile = obj?.mobile || {};
+    const unitD = desktop.unit || 'px';
+    const unitT = tablet.unit || unitD;
+    const unitM = mobile.unit || unitT;
+    const fmt = (side, u) => formatSide(side, u);
+
+    // ---- Desktop -------------------------------------------------
+    const dTop = fmt(desktop.top, unitD);
+    const d = desktop.isLinked ? Array(4).fill(dTop).join(' ') : [fmt(desktop.top, unitD), fmt(desktop.right, unitD), fmt(desktop.bottom, unitD), fmt(desktop.left, unitD)].join(' ');
+
+    // ---- Tablet --------------------------------------------------
+    const tTop = fmt(tablet.top, unitT);
+    const t = tablet.isLinked ? Array(4).fill(tTop).join(' ') : [fmt(tablet.top, unitT), fmt(tablet.right, unitT), fmt(tablet.bottom, unitT), fmt(tablet.left, unitT)].join(' ');
+
+    // ---- Mobile --------------------------------------------------
+    const mTop = fmt(mobile.top, unitM);
+    const m = mobile.isLinked ? Array(4).fill(mTop).join(' ') : [fmt(mobile.top, unitM), fmt(mobile.right, unitM), fmt(mobile.bottom, unitM), fmt(mobile.left, unitM)].join(' ');
+    return {
+      desktop: d,
+      tablet: t,
+      mobile: m
+    };
+  };
 
   /* ------------------------------------------------------------------
-     3. SECTION – responsive padding / margin
+     Padding / Margin for every element
      ------------------------------------------------------------------ */
-  const padS = sectionPadding || {};
-  const marS = sectionMargin || {};
-  const padSD = padS.desktop || {};
-  const padST = padS.tablet || {};
-  const padSM = padS.mobile || {};
-  const marSD = marS.desktop || {};
-  const marST = marS.tablet || {};
-  const marSM = marS.mobile || {};
-  const uPadSD = padSD.unit || 'px';
-  const uPadST = padST.unit || uPadSD;
-  const uPadSM = padSM.unit || uPadST;
-  const uMarSD = marSD.unit || 'px';
-  const uMarST = marST.unit || uMarSD;
-  const uMarSM = marSM.unit || uMarST;
-  const sectionPaddingDesktop = [formatSide(padSD.top, uPadSD), formatSide(padSD.right, uPadSD), formatSide(padSD.bottom, uPadSD), formatSide(padSD.left, uPadSD)].join(' ');
-  const sectionPaddingTablet = [formatSide(padST.top, uPadST), formatSide(padST.right, uPadST), formatSide(padST.bottom, uPadST), formatSide(padST.left, uPadST)].join(' ');
-  const sectionPaddingMobile = [formatSide(padSM.top, uPadSM), formatSide(padSM.right, uPadSM), formatSide(padSM.bottom, uPadSM), formatSide(padSM.left, uPadSM)].join(' ');
-  const sectionMarginDesktop = [formatSide(marSD.top, uMarSD), formatSide(marSD.right, uMarSD), formatSide(marSD.bottom, uMarSD), formatSide(marSD.left, uMarSD)].join(' ');
-  const sectionMarginTablet = [formatSide(marST.top, uMarST), formatSide(marST.right, uMarST), formatSide(marST.bottom, uMarST), formatSide(marST.left, uMarST)].join(' ');
-  const sectionMarginMobile = [formatSide(marSM.top, uMarSM), formatSide(marSM.right, uMarSM), formatSide(marSM.bottom, uMarSM), formatSide(marSM.left, uMarSM)].join(' ');
+  const headingPad = getResponsive(headingPadding);
+  const headingMar = getResponsive(headingMargin);
+  const descPad = getResponsive(descriptionPadding);
+  const descMar = getResponsive(descriptionMargin);
+  const buttonPad = getResponsive(buttonPadding);
+  const buttonMar = getResponsive(buttonMargin);
+  const sectionPad = getResponsive(sectionPadding);
+  const sectionMar = getResponsive(sectionMargin);
 
   /* ------------------------------------------------------------------
-     4. BACKGROUND – solid color OR gradient
+     BACKGROUND: solid colour or 2-colour gradient
      ------------------------------------------------------------------ */
   const backgroundCSS = (() => {
     if (bgType === 'gradient' && bgGradient1) {
       const stops = [`${bgGradient1} 0%`];
-      if (bgGradient2) {
-        stops.push(`${bgGradient2} 100%`);
-      } else {
-        stops.push(`${bgGradient1}00 100%`); // transparent version of first color
-      }
+      stops.push(bgGradient2 ? `${bgGradient2} 100%` : `${bgGradient1}00 100%`);
       const angle = bgGradientAngle !== null && bgGradientAngle !== void 0 ? bgGradientAngle : 90;
-      let direction = 'to right';
-      if (angle === 0) direction = 'to right';else if (angle === 90) direction = 'to bottom';else if (angle === 180) direction = 'to left';else if (angle === 270) direction = 'to top';else direction = `${angle}deg`;
+      const map = {
+        0: 'to right',
+        90: 'to bottom',
+        180: 'to left',
+        270: 'to top'
+      };
+      const direction = map[angle] || `${angle}deg`;
       return `linear-gradient(${direction}, ${stops.join(', ')})`;
     }
-
-    // solid color
     return bgColor;
   })();
-  console.log(backgroundCSS);
+
+  /* ------------------------------------------------------------------
+     TYPOGRAPHY helper
+     ------------------------------------------------------------------ */
+  const typo = (prefix, family, weight, transform, size, lh) => `
+		${family ? `font-family: ${family};` : ''}
+		${weight ? `font-weight: ${weight};` : ''}
+		${transform ? `text-transform: ${transform};` : ''}
+		font-size: ${size || (prefix === 'heading' ? 40 : prefix === 'description' ? 16 : 14)}px;
+		line-height: ${lh || 1.4};
+	`;
+
+  /* ------------------------------------------------------------------
+     RENDER <style>
+     ------------------------------------------------------------------ */
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("style", {
     children: `
 				/* -------------------------------------------------
@@ -1276,8 +1294,8 @@ const Style = ({
 				   ------------------------------------------------- */
 				.wp-block-create-block-call-to-action-block {
 					background: ${backgroundCSS};
-					padding: ${sectionPaddingDesktop};
-					margin: ${sectionMarginDesktop};
+					padding: ${sectionPad.desktop};
+					margin: ${sectionMar.desktop};
 				}
 
 				/* -------------------------------------------------
@@ -1285,13 +1303,31 @@ const Style = ({
 				   ------------------------------------------------- */
 				.wp-block-create-block-call-to-action-block .hero-content .main-heading {
 					color: ${headingColor || 'inherit'};
-					${headingFontFamily ? `font-family: ${headingFontFamily};` : ''}
-					${headingFontWeight ? `font-weight: ${headingFontWeight};` : ''}
-					${headingTextTransform ? `text-transform: ${headingTextTransform};` : ''}
-					font-size: ${headingFontSizeDesktop || 40}px;
-					line-height: ${headingLineHeightDesktop || 1.2};
-					padding: ${headingPaddingDesktop};
-					margin: ${headingMarginDesktop};
+					${typo('heading', headingFontFamily, headingFontWeight, headingTextTransform, headingFontSizeDesktop, headingLineHeightDesktop)}
+					padding: ${headingPad.desktop};
+					margin: ${headingMar.desktop};
+				}
+
+				/* -------------------------------------------------
+				   DESCRIPTION
+				   ------------------------------------------------- */
+				.wp-block-create-block-call-to-action-block .hero-content .description {
+					color: ${descriptionColor || 'inherit'};
+					${typo('description', descriptionFontFamily, descriptionFontWeight, descriptionTextTransform, descriptionFontSizeDesktop, descriptionLineHeightDesktop)}
+					padding: ${descPad.desktop};
+					margin: ${descMar.desktop};
+				}
+
+				/* -------------------------------------------------
+				   BUTTON
+				   ------------------------------------------------- */
+				.wp-block-create-block-call-to-action-block .hero-content .cta-button {
+					${typo('button', buttonFontFamily, buttonFontWeight, buttonTextTransform, buttonFontSizeDesktop, buttonLineHeightDesktop)}
+					padding: ${buttonPad.desktop};
+					margin: ${buttonMar.desktop};
+					display: inline-block;
+                    color: ${buttonTextColor || 'inherit'};
+                    background-color: ${buttonBgColor};
 				}
 
 				/* -------------------------------------------------
@@ -1299,14 +1335,26 @@ const Style = ({
 				   ------------------------------------------------- */
 				@media (max-width: 1024px) {
 					.wp-block-create-block-call-to-action-block {
-						padding: ${sectionPaddingTablet};
-						margin: ${sectionMarginTablet};
+						padding: ${sectionPad.tablet};
+						margin: ${sectionMar.tablet};
 					}
 					.wp-block-create-block-call-to-action-block .hero-content .main-heading {
 						font-size: ${headingFontSizeTablet || 32}px;
 						line-height: ${headingLineHeightTablet || 1.3};
-						padding: ${headingPaddingTablet};
-						margin: ${headingMarginTablet};
+						padding: ${headingPad.tablet};
+						margin: ${headingMar.tablet};
+					}
+					.wp-block-create-block-call-to-action-block .hero-content .description {
+						font-size: ${descriptionFontSizeTablet || 15}px;
+						line-height: ${descriptionLineHeightTablet || 1.5};
+						padding: ${descPad.tablet};
+						margin: ${descMar.tablet};
+					}
+					.wp-block-create-block-call-to-action-block .hero-content .cta-button {
+						font-size: ${buttonFontSizeTablet || 14}px;
+						line-height: ${buttonLineHeightTablet || 1.4};
+						padding: ${buttonPad.tablet};
+						margin: ${buttonMar.tablet};
 					}
 				}
 
@@ -1315,14 +1363,26 @@ const Style = ({
 				   ------------------------------------------------- */
 				@media (max-width: 767px) {
 					.wp-block-create-block-call-to-action-block {
-						padding: ${sectionPaddingMobile};
-						margin: ${sectionMarginMobile};
+						padding: ${sectionPad.mobile};
+						margin: ${sectionMar.mobile};
 					}
 					.wp-block-create-block-call-to-action-block .hero-content .main-heading {
 						font-size: ${headingFontSizeMobile || 24}px;
 						line-height: ${headingLineHeightMobile || 1.4};
-						padding: ${headingPaddingMobile};
-						margin: ${headingMarginMobile};
+						padding: ${headingPad.mobile};
+						margin: ${headingMar.mobile};
+					}
+					.wp-block-create-block-call-to-action-block .hero-content .description {
+						font-size: ${descriptionFontSizeMobile || 14}px;
+						line-height: ${descriptionLineHeightMobile || 1.6};
+						padding: ${descPad.mobile};
+						margin: ${descMar.mobile};
+					}
+					.wp-block-create-block-call-to-action-block .hero-content .cta-button {
+						font-size: ${buttonFontSizeMobile || 13}px;
+						line-height: ${buttonLineHeightMobile || 1.5};
+						padding: ${buttonPad.mobile};
+						margin: ${buttonMar.mobile};
 					}
 				}
 			`
@@ -1338,7 +1398,7 @@ const Style = ({
   \*********************************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/call-to-action-block","version":"0.1.0","title":"Call To Action Block","category":"widgets","icon":"megaphone","description":"A simple, customizable call-to-action block for Gutenberg.","example":{},"attributes":{"headingTag":{"type":"string","default":"h2"},"heading":{"type":"string","default":"Welcome to Our Web Experience"},"headingColor":{"type":"string","default":""},"descriptionColor":{"type":"string","default":""},"description":{"type":"string","default":"Beautiful UI sections, interactive features, and smooth animations."},"buttonText":{"type":"string","default":"Get Started"},"buttonUrl":{"type":"string","default":"#"},"sectionPadding":{"type":"object","default":{"desktop":{"top":"100","right":"0","bottom":"100","left":"0","unit":"px","isLinked":true},"tablet":{"top":"70","right":"0","bottom":"70","left":"0","unit":"px","isLinked":true},"mobile":{"top":"50","right":"0","bottom":"50","left":"0","unit":"px","isLinked":true}}},"sectionMargin":{"type":"object","default":{"desktop":{"top":0,"right":0,"bottom":0,"left":0,"unit":"px","isLinked":true},"tablet":{"top":0,"right":0,"bottom":0,"left":0,"unit":"px","isLinked":true},"mobile":{"top":0,"right":0,"bottom":0,"left":0,"unit":"px","isLinked":true}}},"headingFontFamily":{"type":"string","default":""},"headingFontSizeDesktop":{"type":"number","default":40},"headingFontSizeTablet":{"type":"number","default":28},"headingFontSizeMobile":{"type":"number","default":22},"headingFontWeight":{"type":"string","default":"700"},"headingTextTransform":{"type":"string","default":"none"},"headingLineHeightDesktop":{"type":"number","default":1.1},"headingLineHeightTablet":{"type":"number","default":1.2},"headingLineHeightMobile":{"type":"number","default":1.3},"headingPadding":{"type":"object","default":{"desktop":{"top":"0","right":"0","bottom":"0","left":"0","unit":"px","isLinked":true},"tablet":{"top":"0","right":"0","bottom":"0","left":"0","unit":"px","isLinked":true},"mobile":{"top":"0","right":"0","bottom":"0","left":"0","unit":"px","isLinked":true}}},"headingMargin":{"type":"object","default":{"desktop":{"top":0,"right":0,"bottom":0,"left":0,"unit":"px","isLinked":true},"tablet":{"top":0,"right":0,"bottom":0,"left":0,"unit":"px","isLinked":true},"mobile":{"top":0,"right":0,"bottom":0,"left":0,"unit":"px","isLinked":true}}},"descriptionFontFamily":{"type":"string","default":""},"descriptionFontSizeDesktop":{"type":"number","default":18},"descriptionFontSizeTablet":{"type":"number","default":18},"descriptionFontSizeMobile":{"type":"number","default":16},"descriptionFontWeight":{"type":"string","default":"700"},"descriptionTextTransform":{"type":"string","default":"none"},"descriptionLineHeightDesktop":{"type":"number","default":1.1},"descriptionLineHeightTablet":{"type":"number","default":1.2},"descriptionLineHeightMobile":{"type":"number","default":1.3},"descriptionPadding":{"type":"object","default":{"desktop":{"top":"0","right":"0","bottom":"0","left":"0","unit":"px","isLinked":true},"tablet":{"top":"0","right":"0","bottom":"0","left":"0","unit":"px","isLinked":true},"mobile":{"top":"0","right":"0","bottom":"0","left":"0","unit":"px","isLinked":true}}},"descriptionMargin":{"type":"object","default":{"desktop":{"top":0,"right":0,"bottom":0,"left":0,"unit":"px","isLinked":true},"tablet":{"top":0,"right":0,"bottom":0,"left":0,"unit":"px","isLinked":true},"mobile":{"top":0,"right":0,"bottom":0,"left":0,"unit":"px","isLinked":true}}},"buttonFontFamily":{"type":"string","default":""},"buttonFontSizeDesktop":{"type":"number","default":18},"buttonFontSizeTablet":{"type":"number","default":18},"buttonFontSizeMobile":{"type":"number","default":16},"buttonFontWeight":{"type":"string","default":"700"},"buttonTextTransform":{"type":"string","default":"none"},"buttonLineHeightDesktop":{"type":"number","default":1.1},"buttonLineHeightTablet":{"type":"number","default":1.2},"buttonLineHeightMobile":{"type":"number","default":1.3},"buttonPadding":{"type":"object","default":{"desktop":{"top":"0","right":"0","bottom":"0","left":"0","unit":"px","isLinked":true},"tablet":{"top":"0","right":"0","bottom":"0","left":"0","unit":"px","isLinked":true},"mobile":{"top":"0","right":"0","bottom":"0","left":"0","unit":"px","isLinked":true}}},"buttonMargin":{"type":"object","default":{"desktop":{"top":0,"right":0,"bottom":0,"left":0,"unit":"px","isLinked":true},"tablet":{"top":0,"right":0,"bottom":0,"left":0,"unit":"px","isLinked":true},"mobile":{"top":0,"right":0,"bottom":0,"left":0,"unit":"px","isLinked":true}}},"bgType":{"type":"string","default":"gradient"},"bgColor":{"type":"string","default":""},"bgGradient1":{"type":"string","default":""},"bgGradient2":{"type":"string","default":""},"bgGradientAngle":{"type":"number","default":90}},"supports":{"html":false,"align":["left","right","full"]},"textdomain":"call-to-action-block","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-view.css","render":"file:./render.php","viewScript":["file:./view.js","react","react-dom"]}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/call-to-action-block","version":"0.1.0","title":"Call To Action Block","category":"widgets","icon":"megaphone","description":"A simple, customizable call-to-action block for Gutenberg.","example":{},"attributes":{"headingTag":{"type":"string","default":"h2"},"heading":{"type":"string","default":"Welcome to Our Web Experience"},"headingColor":{"type":"string","default":""},"descriptionColor":{"type":"string","default":""},"description":{"type":"string","default":"Beautiful UI sections, interactive features, and smooth animations."},"buttonText":{"type":"string","default":"Get Started"},"buttonUrl":{"type":"string","default":"#"},"sectionPadding":{"type":"object","default":{"desktop":{"top":"100","right":"0","bottom":"100","left":"0","unit":"px","isLinked":true},"tablet":{"top":"70","right":"0","bottom":"70","left":"0","unit":"px","isLinked":true},"mobile":{"top":"50","right":"0","bottom":"50","left":"0","unit":"px","isLinked":true}}},"sectionMargin":{"type":"object","default":{"desktop":{"top":0,"right":0,"bottom":0,"left":0,"unit":"px","isLinked":true},"tablet":{"top":0,"right":0,"bottom":0,"left":0,"unit":"px","isLinked":true},"mobile":{"top":0,"right":0,"bottom":0,"left":0,"unit":"px","isLinked":true}}},"headingFontFamily":{"type":"string","default":""},"headingFontSizeDesktop":{"type":"number","default":40},"headingFontSizeTablet":{"type":"number","default":28},"headingFontSizeMobile":{"type":"number","default":22},"headingFontWeight":{"type":"string","default":"700"},"headingTextTransform":{"type":"string","default":"none"},"headingLineHeightDesktop":{"type":"number","default":1.1},"headingLineHeightTablet":{"type":"number","default":1.2},"headingLineHeightMobile":{"type":"number","default":1.3},"headingPadding":{"type":"object","default":{"desktop":{"top":"0","right":"0","bottom":"10","left":"0","unit":"px","isLinked":false},"tablet":{"top":"0","right":"0","bottom":"10","left":"0","unit":"px","isLinked":false},"mobile":{"top":"0","right":"0","bottom":"10","left":"0","unit":"px","isLinked":false}}},"headingMargin":{"type":"object","default":{"desktop":{"top":0,"right":0,"bottom":0,"left":0,"unit":"px","isLinked":false},"tablet":{"top":0,"right":0,"bottom":0,"left":0,"unit":"px","isLinked":false},"mobile":{"top":0,"right":0,"bottom":0,"left":0,"unit":"px","isLinked":false}}},"descriptionFontFamily":{"type":"string","default":""},"descriptionFontSizeDesktop":{"type":"number","default":18},"descriptionFontSizeTablet":{"type":"number","default":18},"descriptionFontSizeMobile":{"type":"number","default":16},"descriptionFontWeight":{"type":"string","default":""},"descriptionTextTransform":{"type":"string","default":"none"},"descriptionLineHeightDesktop":{"type":"number","default":1.1},"descriptionLineHeightTablet":{"type":"number","default":1.2},"descriptionLineHeightMobile":{"type":"number","default":1.3},"descriptionPadding":{"type":"object","default":{"desktop":{"top":"0","right":"0","bottom":"30","left":"0","unit":"px","isLinked":false},"tablet":{"top":"0","right":"0","bottom":"30","left":"0","unit":"px","isLinked":false},"mobile":{"top":"0","right":"0","bottom":"30","left":"0","unit":"px","isLinked":false}}},"descriptionMargin":{"type":"object","default":{"desktop":{"top":0,"right":0,"bottom":0,"left":0,"unit":"px","isLinked":true},"tablet":{"top":0,"right":0,"bottom":0,"left":0,"unit":"px","isLinked":true},"mobile":{"top":0,"right":0,"bottom":0,"left":0,"unit":"px","isLinked":true}}},"buttonFontFamily":{"type":"string","default":""},"buttonFontSizeDesktop":{"type":"number","default":16},"buttonFontSizeTablet":{"type":"number","default":16},"buttonFontSizeMobile":{"type":"number","default":16},"buttonFontWeight":{"type":"string","default":""},"buttonTextTransform":{"type":"string","default":"none"},"buttonLineHeightDesktop":{"type":"number","default":1.1},"buttonLineHeightTablet":{"type":"number","default":1.2},"buttonLineHeightMobile":{"type":"number","default":1.3},"buttonPadding":{"type":"object","default":{"desktop":{"top":"12","right":"21","bottom":"12","left":"21","unit":"px","isLinked":false},"tablet":{"top":"12","right":"21","bottom":"12","left":"21","unit":"px","isLinked":false},"mobile":{"top":"12","right":"21","bottom":"12","left":"21","unit":"px","isLinked":false}}},"buttonMargin":{"type":"object","default":{"desktop":{"top":0,"right":0,"bottom":0,"left":0,"unit":"px","isLinked":false},"tablet":{"top":0,"right":0,"bottom":0,"left":0,"unit":"px","isLinked":false},"mobile":{"top":0,"right":0,"bottom":0,"left":0,"unit":"px","isLinked":false}}},"buttonTextColor":{"type":"string","default":""},"buttonBgColor":{"type":"string","default":""},"bgType":{"type":"string","default":"gradient"},"bgColor":{"type":"string","default":""},"bgGradient1":{"type":"string","default":""},"bgGradient2":{"type":"string","default":""},"bgGradientAngle":{"type":"number","default":90}},"supports":{"html":false,"align":["left","right","full"]},"textdomain":"call-to-action-block","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-view.css","render":"file:./render.php","viewScript":["file:./view.js","react","react-dom"]}');
 
 /***/ }),
 

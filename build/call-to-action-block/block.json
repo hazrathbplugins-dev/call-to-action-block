@@ -9,6 +9,10 @@
   "description": "A simple, customizable call-to-action block for Gutenberg.",
   "example": {},
   "attributes": {
+    "alignment": {
+      "type": "string",
+      "default": "center"
+    },
     "headingTag": {
       "type": "string",
       "default": "h2"

@@ -157,7 +157,12 @@ const Style = ({ attributes }) => {
 					background: ${backgroundCSS};
 					padding: ${sectionPad.desktop};
 					margin: ${sectionMar.desktop};
+                    align-items: ${attributes?.alignment || 'center'};
 				}
+
+                .callToActionBlock {
+                    text-align: ${attributes?.alignment || 'center'};
+                }
 
 				/* -------------------------------------------------
 				   HEADING

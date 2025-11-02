@@ -14,6 +14,10 @@ return array(
 			
 		),
 		'attributes' => array(
+			'alignment' => array(
+				'type' => 'string',
+				'default' => 'center'
+			),
 			'headingTag' => array(
 				'type' => 'string',
 				'default' => 'h2'

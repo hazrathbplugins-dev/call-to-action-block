@@ -13,16 +13,6 @@ function Settings({ attributes, setAttributes }) {
             <InspectorControls>
                 <PanelBody title={__('General', 'call-to-action-block')} initialOpen={true}>
                     <SelectControl
-                        label={__('Alignment', 'call-to-action-block')}
-                        value={alignment}
-                        options={[
-                            { label: 'Left', value: 'left' },
-                            { label: 'Center', value: 'center' },
-                            { label: 'Right', value: 'right' },
-                        ]}
-                        onChange={(value) => setAttributes({ alignment: value })}
-                    />
-                    <SelectControl
                         label={__('Heading HTML Tag', 'call-to-action-block')}
                         value={headingTag}
                         options={[
@@ -35,13 +25,25 @@ function Settings({ attributes, setAttributes }) {
                         ]}
                         onChange={(value) => setAttributes({ headingTag: value })}
                     />
-                    <TypographyControl attributes={attributes} setAttributes={setAttributes} prefix="heading" />
-                    <ColorControl
-                        label={__('Color', 'call-to-action-block')}
-                        value={headingColor}
-                        onChange={(color) => setAttributes({ headingColor: color })}
-                        defaultColor=""
-                        className="color-picker-control"
+                    <TextControl
+                        label={__('Heading Text', 'call-to-action-block')}
+                        value={attributes.heading}
+                        onChange={(value) => setAttributes({ heading: value })}
+                    />
+                    <TextControl
+                        label={__('Description Text', 'call-to-action-block')}
+                        value={attributes.description}
+                        onChange={(value) => setAttributes({ description: value })}
+                    />
+                    <SelectControl
+                        label={__('Alignment', 'call-to-action-block')}
+                        value={alignment}
+                        options={[
+                            { label: 'Left', value: 'start' },
+                            { label: 'Center', value: 'center' },
+                            { label: 'Right', value: 'end' },
+                        ]}
+                        onChange={(value) => setAttributes({ alignment: value })}
                     />
                 </PanelBody>
                 <PanelBody title={__('Button', 'call-to-action-block')} initialOpen={false}>

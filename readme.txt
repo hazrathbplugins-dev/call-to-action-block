@@ -1,8 +1,8 @@
 === Call To Action Block ===
 Contributors:      hazrathali
-Tags:              call-to-action, cta, gutenberg-block, marketing, conversion, button, landing-page, hero-section
-Requires at least: 6.0
-Tested up to:      6.7
+Tags:              call-to-action, cta, gutenberg-block, marketing, landing-page,
+Requires at least: 6.7
+Tested up to:      6.8
 Stable tag:        0.1.0
 Requires PHP:      7.4
 License:           GPL-2.0-or-later

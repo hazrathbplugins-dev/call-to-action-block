@@ -62,6 +62,7 @@ const BlockName = ({
     heading,
     description,
     buttonText,
+    buttonUrl,
     layoutStyle
   } = attributes;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
@@ -133,10 +134,10 @@ const BlockName = ({
                         children: "Available 24 hours a day"
                       })
                     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
-                      href: "/contact/",
+                      href: buttonUrl,
                       className: "ctaBtn mail-btn",
                       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
-                        children: "Contact us by email"
+                        children: buttonText
                       })
                     })]
                   })]

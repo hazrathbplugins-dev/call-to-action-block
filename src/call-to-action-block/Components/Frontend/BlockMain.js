@@ -1,7 +1,7 @@
 import { RichText } from '@wordpress/block-editor';
 import Style from '../../Style';
 const BlockName = ({ attributes }) => {
-	const { subHeading, headingTag, heading, description, buttonText, layoutStyle } = attributes;
+	const { subHeading, headingTag, heading, description, buttonText, buttonUrl, layoutStyle } = attributes;
 
 	return (
 		<>
@@ -55,8 +55,8 @@ const BlockName = ({ attributes }) => {
 										</li>
 										<li>
 											<p className="call"><span>Available 24 hours a day</span></p>
-											<a href="/contact/" className="ctaBtn mail-btn">
-												<span>Contact us by email</span>
+											<a href={buttonUrl} className="ctaBtn mail-btn">
+												<span>{buttonText}</span>
 											</a>
 										</li>
 									</ul>

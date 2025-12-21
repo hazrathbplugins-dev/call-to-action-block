@@ -319,7 +319,7 @@ const Style = ({
 				   SECTION (container)
 				   ------------------------------------------------- */
 				.wp-block-create-block-call-to-action-block {
-					background: ${backgroundCSS};
+					background: ${backgroundCSS} !important;
 					padding: ${sectionPad.desktop};
 					margin: ${sectionMar.desktop};
                     align-items: ${attributes?.alignment || 'center'};

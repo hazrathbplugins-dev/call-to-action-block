@@ -9,9 +9,17 @@
 	"description": "A simple, customizable call-to-action block for Gutenberg.",
 	"example": {},
 	"attributes": {
+		"layoutStyle": {
+			"type": "string",
+			"default": "default"
+		},
 		"alignment": {
 			"type": "string",
 			"default": "center"
+		},
+		"subHeading": {
+			"type": "string",
+			"default": "Free consultation"
 		},
 		"headingTag": {
 			"type": "string",

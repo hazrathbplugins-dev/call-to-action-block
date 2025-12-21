@@ -14,9 +14,17 @@ return array(
 			
 		),
 		'attributes' => array(
+			'layoutStyle' => array(
+				'type' => 'string',
+				'default' => 'default'
+			),
 			'alignment' => array(
 				'type' => 'string',
 				'default' => 'center'
+			),
+			'subHeading' => array(
+				'type' => 'string',
+				'default' => 'Free consultation'
 			),
 			'headingTag' => array(
 				'type' => 'string',

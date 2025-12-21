@@ -70,3 +70,188 @@
     font-size: 1rem;
   }
 }
+
+
+/* ----------
+ * =============================================================
+ * Style01
+ * =============================================================
+-------------*/
+
+.wp-block-create-block-call-to-action-block.simple {
+  background: linear-gradient(90deg, #009CA6, #11BCC7);
+  opacity: .9;
+}
+.pContact004 a, .pContact004 p {
+    color: #333;
+}
+.pContact004 h2 {
+    color: #009CA6;
+}
+.pContact004__textArea span.sub {
+    display: inline-block;
+    font-size: .5em;
+    color: #FFF;
+    background: #009CA6;
+    padding: .3em 1em;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+.pContact004__content {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+}
+
+.pContact004__inner {
+    position: relative;
+    background: #FFF;
+    width: min(100%, 1170px);
+    margin: 0 auto;
+    border-radius: 20px;
+    z-index: 1;
+}
+.pContact004__innerItem {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 0;
+}
+.pContact004__textArea,
+.pContact004__btnArea {
+    position: relative;
+    width: 50%; 
+    padding: 0 50px;
+}
+.pContact004__textArea::after {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: calc(100% - 100px);/*paddingの差分*/
+    background: #DDD;
+    right: 0;
+    top: 50px;
+}
+ul.pContact004__btnList {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+ul.pContact004__btnList li {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+ul.pContact004__btnList li+li {
+    margin-top: 30px;
+}
+ul.pContact004__btnList li p.call {
+     color: #009CA6;
+     margin: 0 0 10px;
+     line-height: 1;
+}
+ul.pContact004__btnList li p.call span {
+    padding: 0 1em;
+    position: relative;
+    display: inline-block;
+}
+ul.pContact004__btnList li p.call span::before,
+ul.pContact004__btnList li p.call span::after {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 1em;
+    background: #009CA6;
+    bottom: 0;
+}
+ul.pContact004__btnList li p.call span::before {
+    left: 0;
+    transform: rotate(-10deg);
+}
+ul.pContact004__btnList li p.call span::after {
+    right: 0;
+    transform: rotate(10deg);
+}
+@media print, screen and (max-width: 769px) {
+    .pContact004__innerItem {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .pContact004__textArea, 
+    .pContact004__btnArea {
+        width: 100%;
+        text-align: center;
+    }
+}
+/* ----------
+ * ctaBtn 
+-------------*/
+a.ctaBtn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.5;
+    transition: .3s;
+    padding: 1rem 0;
+}
+a.ctaBtn:hover {
+  opacity: .6;
+}
+/* 電話 */
+a.ctaBtn.tel-btn span.num {
+    font-size: 2.38em;
+}
+a.ctaBtn.tel-btn span.num::before {
+    font-family: "Material Symbols Outlined";
+    content: "\e0b0"; /** Code point を入力 */
+    color: #009CA6;
+    font-size: 1.2em;
+    padding-right: .5em;
+    position: relative;
+    top: .15em;
+}
+/* メール */
+a.ctaBtn.mail-btn {
+    color: #009CA6;
+    background: #F3FAFB;
+    width: min(100%, 280px);
+    border: 2px solid;
+    border-radius: 30px;
+    box-shadow: 5px 5px 0 #E2EDEF;
+}
+a.ctaBtn.mail-btn span {
+    position: relative;
+    padding-right: 1.5em;
+}
+a.ctaBtn.mail-btn span::before {
+    font-family: "Material Symbols Outlined";
+    content: "\e158"; /** Code point を入力 */
+    font-size: 1.2em;
+    padding-right: .5em;
+    position: relative;
+    top: .15em;
+}
+a.ctaBtn.mail-btn span::after {
+    display: block;
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 6px;
+    height: 6px;
+    border-right: 2px solid;
+    border-bottom: 2px solid;
+    -webkit-transform: rotate(-45deg) translateY(-50%);
+    transform: rotate(-45deg) translateY(-50%);
+}

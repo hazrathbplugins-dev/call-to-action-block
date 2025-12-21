@@ -1,1 +1,251 @@
-.wp-block-create-block-call-to-action-block{align-items:center;background:linear-gradient(to bottom right,#0f2027,#203a43,#2c5364);color:#fff;display:flex;flex-direction:column;justify-content:center;overflow:hidden;padding:5rem 0;position:relative;text-align:center}.hero-content .main-heading{font-size:3rem;font-weight:700;margin-bottom:1rem}.hero-content .description{color:#fff;font-size:1.2rem;line-height:1.5;margin:0 auto 2rem;max-width:600px}.cta-button{background-color:#00c9a7;border:none;border-radius:50px;color:#fff;cursor:pointer;font-size:1rem;padding:.75rem 1.8rem;transition:all .3s ease}.cta-button:focus{outline:none}.cta-button:hover{background-color:#00b89c;transform:scale(1.05)}@keyframes bounce{0%,to{transform:translateY(0)}50%{transform:translateY(10px)}}@media(max-width:768px){.hero-content h1{font-size:2.2rem}.hero-content p{font-size:1rem}}
+/*!************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/call-to-action-block/style.scss ***!
+  \************************************************************************************************************************************************************************************************************************************************************/
+@charset "UTF-8";
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+.wp-block-create-block-call-to-action-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom right, #0f2027, #203a43, #2c5364);
+  color: #fff;
+  text-align: center;
+  position: relative;
+  padding: 5rem 0;
+  overflow: hidden;
+}
+/* Hero content styling */
+.hero-content .main-heading {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+.hero-content .description {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  line-height: 1.5;
+  color: #fff;
+}
+.cta-button {
+  background-color: #00c9a7;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.8rem;
+  font-size: 1rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.cta-button:focus {
+  outline: none;
+}
+.cta-button:hover {
+  background-color: #00b89c;
+  transform: scale(1.05);
+}
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+}
+/* Responsive typography */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+  .hero-content p {
+    font-size: 1rem;
+  }
+}
+/* ----------
+ * =============================================================
+ * Style01
+ * =============================================================
+-------------*/
+.wp-block-create-block-call-to-action-block.simple {
+  background: linear-gradient(90deg, #009CA6, #11BCC7);
+  opacity: 0.9;
+}
+.pContact004 a, .pContact004 p {
+  color: #333;
+}
+.pContact004 h2 {
+  color: #009CA6;
+}
+.pContact004__textArea span.sub {
+  display: inline-block;
+  font-size: 0.5em;
+  color: #FFF;
+  background: #009CA6;
+  padding: 0.3em 1em;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+.pContact004__content {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+}
+.pContact004__inner {
+  position: relative;
+  background: #FFF;
+  width: min(100%, 1170px);
+  margin: 0 auto;
+  border-radius: 20px;
+  z-index: 1;
+}
+.pContact004__innerItem {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 0;
+}
+.pContact004__textArea,
+.pContact004__btnArea {
+  position: relative;
+  width: 50%;
+  padding: 0 50px;
+}
+.pContact004__textArea::after {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: calc(100% - 100px); /*paddingの差分*/
+  background: #DDD;
+  right: 0;
+  top: 50px;
+}
+ul.pContact004__btnList {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+ul.pContact004__btnList li {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+ul.pContact004__btnList li + li {
+  margin-top: 30px;
+}
+ul.pContact004__btnList li p.call {
+  color: #009CA6;
+  margin: 0 0 10px;
+  line-height: 1;
+}
+ul.pContact004__btnList li p.call span {
+  padding: 0 1em;
+  position: relative;
+  display: inline-block;
+}
+ul.pContact004__btnList li p.call span::before,
+ul.pContact004__btnList li p.call span::after {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: 1em;
+  background: #009CA6;
+  bottom: 0;
+}
+ul.pContact004__btnList li p.call span::before {
+  left: 0;
+  transform: rotate(-10deg);
+}
+ul.pContact004__btnList li p.call span::after {
+  right: 0;
+  transform: rotate(10deg);
+}
+@media print, screen and (max-width: 769px) {
+  .pContact004__innerItem {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .pContact004__textArea,
+  .pContact004__btnArea {
+    width: 100%;
+    text-align: center;
+  }
+}
+/* ----------
+ * ctaBtn 
+-------------*/
+a.ctaBtn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.5;
+  transition: 0.3s;
+  padding: 1rem 0;
+}
+a.ctaBtn:hover {
+  opacity: 0.6;
+}
+/* 電話 */
+a.ctaBtn.tel-btn span.num {
+  font-size: 2.38em;
+}
+a.ctaBtn.tel-btn span.num::before {
+  font-family: "Material Symbols Outlined";
+  content: "\e0b0"; /** Code point を入力 */
+  color: #009CA6;
+  font-size: 1.2em;
+  padding-right: 0.5em;
+  position: relative;
+  top: 0.15em;
+}
+/* メール */
+a.ctaBtn.mail-btn {
+  color: #009CA6;
+  background: #F3FAFB;
+  width: min(100%, 280px);
+  border: 2px solid;
+  border-radius: 30px;
+  box-shadow: 5px 5px 0 #E2EDEF;
+}
+a.ctaBtn.mail-btn span {
+  position: relative;
+  padding-right: 1.5em;
+}
+a.ctaBtn.mail-btn span::before {
+  font-family: "Material Symbols Outlined";
+  content: "\e158"; /** Code point を入力 */
+  font-size: 1.2em;
+  padding-right: 0.5em;
+  position: relative;
+  top: 0.15em;
+}
+a.ctaBtn.mail-btn span::after {
+  display: block;
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 0;
+  width: 6px;
+  height: 6px;
+  border-right: 2px solid;
+  border-bottom: 2px solid;
+  transform: rotate(-45deg) translateY(-50%);
+}
+
+/*# sourceMappingURL=style-view.css.map*/

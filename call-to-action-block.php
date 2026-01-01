@@ -58,3 +58,13 @@ function create_block_call_to_action_block_block_init() {
 	}
 }
 add_action( 'init', 'create_block_call_to_action_block_block_init' );
+
+function cta_enqueue_remix_icon() {
+    wp_enqueue_style(
+        'remixicon',
+        'https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css',
+        [],
+        '3.5.0'
+    );
+}
+add_action( 'enqueue_block_assets', 'cta_enqueue_remix_icon' );

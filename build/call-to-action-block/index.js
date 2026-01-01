@@ -190,8 +190,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Style_ColorControl__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Style/ColorControl */ "./src/call-to-action-block/Components/Backend/Style/ColorControl.js");
 /* harmony import */ var _Style_DimensionControl__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./Style/DimensionControl */ "./src/call-to-action-block/Components/Backend/Style/DimensionControl.js");
 /* harmony import */ var _Style_BackgroundColor__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./Style/BackgroundColor */ "./src/call-to-action-block/Components/Backend/Style/BackgroundColor.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _Style_IconSelector__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Style/IconSelector */ "./src/call-to-action-block/Components/Backend/Style/IconSelector.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__);
+
 
 
 
@@ -213,15 +215,16 @@ function Settings({
     headingPadding,
     headingMargin,
     sectionPadding,
-    sectionMargin
+    sectionMargin,
+    icon
   } = attributes;
   {/* Inspector Settings */}
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InspectorControls, {
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InspectorControls, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
         title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('General', 'call-to-action-block'),
         initialOpen: true,
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.SelectControl, {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.SelectControl, {
           label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Heading HTML Tag', 'call-to-action-block'),
           value: headingTag,
           options: [{
@@ -246,19 +249,19 @@ function Settings({
           onChange: value => setAttributes({
             headingTag: value
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextControl, {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextControl, {
           label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Heading Text', 'call-to-action-block'),
           value: attributes.heading,
           onChange: value => setAttributes({
             heading: value
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextControl, {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextControl, {
           label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Description Text', 'call-to-action-block'),
           value: attributes.description,
           onChange: value => setAttributes({
             description: value
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.SelectControl, {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.SelectControl, {
           label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Alignment', 'call-to-action-block'),
           value: alignment,
           options: [{
@@ -275,16 +278,16 @@ function Settings({
             alignment: value
           })
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
         title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Button', 'call-to-action-block'),
         initialOpen: false,
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextControl, {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextControl, {
           label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Button Text', 'call-to-action-block'),
           value: buttonText,
           onChange: value => setAttributes({
             buttonText: value
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextControl, {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextControl, {
           label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Button URL', 'call-to-action-block'),
           value: buttonUrl,
           onChange: value => setAttributes({
@@ -292,35 +295,40 @@ function Settings({
           })
         })]
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InspectorControls, {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InspectorControls, {
       group: "styles",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
         title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Section Layout', 'call-to-action-block'),
         initialOpen: true,
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Style_BackgroundColor__WEBPACK_IMPORTED_MODULE_6__["default"], {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Style_BackgroundColor__WEBPACK_IMPORTED_MODULE_6__["default"], {
           attributes: attributes,
           setAttributes: setAttributes
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Style_DimensionControl__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Style_DimensionControl__WEBPACK_IMPORTED_MODULE_5__["default"], {
           label: "Padding",
           value: sectionPadding,
           onChange: newVal => setAttributes({
             sectionPadding: newVal
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Style_DimensionControl__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Style_DimensionControl__WEBPACK_IMPORTED_MODULE_5__["default"], {
           label: "Margin",
           value: sectionMargin,
           onChange: newVal => setAttributes({
             sectionMargin: newVal
           })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Style_IconSelector__WEBPACK_IMPORTED_MODULE_7__["default"], {
+          value: icon,
+          onChange: icon => setAttributes({
+            icon
+          })
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
         title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Heading Styles', 'call-to-action-block'),
         initialOpen: false,
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Style_TypographyControl__WEBPACK_IMPORTED_MODULE_3__.TypographyControl, {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Style_TypographyControl__WEBPACK_IMPORTED_MODULE_3__.TypographyControl, {
           attributes: attributes,
           setAttributes: setAttributes,
           prefix: "heading"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Style_ColorControl__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Style_ColorControl__WEBPACK_IMPORTED_MODULE_4__["default"], {
           label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Color', 'call-to-action-block'),
           value: headingColor,
           onChange: color => setAttributes({
@@ -328,27 +336,27 @@ function Settings({
           }),
           defaultColor: "",
           className: "color-picker-control"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Style_DimensionControl__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Style_DimensionControl__WEBPACK_IMPORTED_MODULE_5__["default"], {
           label: "Padding",
           value: headingPadding,
           onChange: newVal => setAttributes({
             headingPadding: newVal
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Style_DimensionControl__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Style_DimensionControl__WEBPACK_IMPORTED_MODULE_5__["default"], {
           label: "Margin",
           value: headingMargin,
           onChange: newVal => setAttributes({
             headingMargin: newVal
           })
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
         title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Description Styles', 'call-to-action-block'),
         initialOpen: false,
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Style_TypographyControl__WEBPACK_IMPORTED_MODULE_3__.TypographyControl, {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Style_TypographyControl__WEBPACK_IMPORTED_MODULE_3__.TypographyControl, {
           attributes: attributes,
           setAttributes: setAttributes,
           prefix: "description"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Style_ColorControl__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Style_ColorControl__WEBPACK_IMPORTED_MODULE_4__["default"], {
           label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Color', 'call-to-action-block'),
           value: attributes.descriptionColor,
           onChange: color => setAttributes({
@@ -356,27 +364,27 @@ function Settings({
           }),
           defaultColor: "",
           className: "color-picker-control"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Style_DimensionControl__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Style_DimensionControl__WEBPACK_IMPORTED_MODULE_5__["default"], {
           label: "Padding",
           value: attributes.descriptionPadding,
           onChange: newVal => setAttributes({
             descriptionPadding: newVal
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Style_DimensionControl__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Style_DimensionControl__WEBPACK_IMPORTED_MODULE_5__["default"], {
           label: "Margin",
           value: attributes.descriptionMargin,
           onChange: newVal => setAttributes({
             descriptionMargin: newVal
           })
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
         title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Button Styles', 'call-to-action-block'),
         initialOpen: false,
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Style_TypographyControl__WEBPACK_IMPORTED_MODULE_3__.TypographyControl, {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Style_TypographyControl__WEBPACK_IMPORTED_MODULE_3__.TypographyControl, {
           attributes: attributes,
           setAttributes: setAttributes,
           prefix: "button"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Style_ColorControl__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Style_ColorControl__WEBPACK_IMPORTED_MODULE_4__["default"], {
           label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Text Color', 'call-to-action-block'),
           value: attributes.buttonTextColor,
           onChange: color => setAttributes({
@@ -384,7 +392,7 @@ function Settings({
           }),
           defaultColor: "",
           className: "color-picker-control"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Style_ColorControl__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Style_ColorControl__WEBPACK_IMPORTED_MODULE_4__["default"], {
           label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Background Color', 'call-to-action-block'),
           value: attributes.buttonBgColor,
           onChange: color => setAttributes({
@@ -392,13 +400,13 @@ function Settings({
           }),
           defaultColor: "",
           className: "color-picker-control"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Style_DimensionControl__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Style_DimensionControl__WEBPACK_IMPORTED_MODULE_5__["default"], {
           label: "Padding",
           value: attributes.buttonPadding,
           onChange: newVal => setAttributes({
             buttonPadding: newVal
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_Style_DimensionControl__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Style_DimensionControl__WEBPACK_IMPORTED_MODULE_5__["default"], {
           label: "Margin",
           value: attributes.buttonMargin,
           onChange: newVal => setAttributes({
@@ -756,6 +764,74 @@ const DimensionControl = ({
 
 /***/ }),
 
+/***/ "./src/call-to-action-block/Components/Backend/Style/IconSelector.js":
+/*!***************************************************************************!*\
+  !*** ./src/call-to-action-block/Components/Backend/Style/IconSelector.js ***!
+  \***************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _icons_remix_icons__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./icons/remix-icons */ "./src/call-to-action-block/Components/Backend/Style/icons/remix-icons.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__);
+
+
+
+
+const IconSelector = ({
+  value,
+  onChange
+}) => {
+  const [isOpen, setIsOpen] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useState)(false);
+  const [search, setSearch] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useState)('');
+  const filteredIcons = _icons_remix_icons__WEBPACK_IMPORTED_MODULE_2__.REMIX_ICONS.filter(icon => icon.toLowerCase().includes(search.toLowerCase()));
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+      className: "cta-icon-selector-trigger",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.Button, {
+        variant: "secondary",
+        onClick: () => setIsOpen(true),
+        children: value ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("i", {
+            className: value
+          }), " Change Icon"]
+        }) : 'Choose Icon'
+      })
+    }), isOpen && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.Modal, {
+      title: "Select an Icon",
+      onRequestClose: () => setIsOpen(false),
+      className: "cta-icon-modal",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.TextControl, {
+        placeholder: "Search icons\u2026",
+        value: search,
+        onChange: setSearch
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+        className: "cta-icon-grid",
+        children: filteredIcons.map(icon => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__.Button, {
+          className: `cta-icon-btn ${value === icon ? 'is-active' : ''}`,
+          onClick: () => {
+            onChange(icon);
+            setIsOpen(false);
+          },
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("i", {
+            className: icon
+          })
+        }, icon))
+      })]
+    })]
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (IconSelector);
+
+/***/ }),
+
 /***/ "./src/call-to-action-block/Components/Backend/Style/TypographyControl.js":
 /*!********************************************************************************!*\
   !*** ./src/call-to-action-block/Components/Backend/Style/TypographyControl.js ***!
@@ -983,6 +1059,20 @@ const TypographyControl = ({
     })]
   });
 };
+
+/***/ }),
+
+/***/ "./src/call-to-action-block/Components/Backend/Style/icons/remix-icons.js":
+/*!********************************************************************************!*\
+  !*** ./src/call-to-action-block/Components/Backend/Style/icons/remix-icons.js ***!
+  \********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   REMIX_ICONS: () => (/* binding */ REMIX_ICONS)
+/* harmony export */ });
+const REMIX_ICONS = ['ri-megaphone-line', 'ri-megaphone-fill', 'ri-arrow-right-line', 'ri-phone-line', 'ri-mail-line', 'ri-star-line', 'ri-heart-line', 'ri-shopping-cart-line'];
 
 /***/ }),
 
@@ -1512,7 +1602,7 @@ const Style = ({
   \*********************************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/call-to-action-block","version":"0.1.0","title":"Call To Action Block","category":"widgets","icon":"megaphone","description":"A simple, customizable call-to-action block for Gutenberg.","example":{},"attributes":{"layoutStyle":{"type":"string","default":"default"},"alignment":{"type":"string","default":"center"},"subHeading":{"type":"string","default":"Free consultation"},"headingTag":{"type":"string","default":"h2"},"heading":{"type":"string","default":"Welcome to Our Web Experience"},"headingColor":{"type":"string","default":""},"descriptionColor":{"type":"string","default":""},"description":{"type":"string","default":"Beautiful UI sections, interactive features, and smooth animations."},"buttonText":{"type":"string","default":"Get Started"},"buttonUrl":{"type":"string","default":"#"},"sectionPadding":{"type":"object","default":{"desktop":{"top":"100","right":"0","bottom":"100","left":"0","unit":"px","isLinked":true},"tablet":{"top":"70","right":"0","bottom":"70","left":"0","unit":"px","isLinked":true},"mobile":{"top":"50","right":"0","bottom":"50","left":"0","unit":"px","isLinked":true}}},"sectionMargin":{"type":"object","default":{"desktop":{"top":0,"right":0,"bottom":0,"left":0,"unit":"px","isLinked":true},"tablet":{"top":0,"right":0,"bottom":0,"left":0,"unit":"px","isLinked":true},"mobile":{"top":0,"right":0,"bottom":0,"left":0,"unit":"px","isLinked":true}}},"headingFontFamily":{"type":"string","default":""},"headingFontSizeDesktop":{"type":"number","default":40},"headingFontSizeTablet":{"type":"number","default":28},"headingFontSizeMobile":{"type":"number","default":22},"headingFontWeight":{"type":"string","default":"700"},"headingTextTransform":{"type":"string","default":"none"},"headingLineHeightDesktop":{"type":"number","default":1.1},"headingLineHeightTablet":{"type":"number","default":1.2},"headingLineHeightMobile":{"type":"number","default":1.3},"headingPadding":{"type":"object","default":{"desktop":{"top":"0","right":"0","bottom":"10","left":"0","unit":"px","isLinked":false},"tablet":{"top":"0","right":"0","bottom":"10","left":"0","unit":"px","isLinked":false},"mobile":{"top":"0","right":"0","bottom":"10","left":"0","unit":"px","isLinked":false}}},"headingMargin":{"type":"object","default":{"desktop":{"top":0,"right":0,"bottom":0,"left":0,"unit":"px","isLinked":false},"tablet":{"top":0,"right":0,"bottom":0,"left":0,"unit":"px","isLinked":false},"mobile":{"top":0,"right":0,"bottom":0,"left":0,"unit":"px","isLinked":false}}},"descriptionFontFamily":{"type":"string","default":""},"descriptionFontSizeDesktop":{"type":"number","default":18},"descriptionFontSizeTablet":{"type":"number","default":18},"descriptionFontSizeMobile":{"type":"number","default":16},"descriptionFontWeight":{"type":"string","default":""},"descriptionTextTransform":{"type":"string","default":"none"},"descriptionLineHeightDesktop":{"type":"number","default":1.1},"descriptionLineHeightTablet":{"type":"number","default":1.2},"descriptionLineHeightMobile":{"type":"number","default":1.3},"descriptionPadding":{"type":"object","default":{"desktop":{"top":"0","right":"0","bottom":"30","left":"0","unit":"px","isLinked":false},"tablet":{"top":"0","right":"0","bottom":"30","left":"0","unit":"px","isLinked":false},"mobile":{"top":"0","right":"0","bottom":"30","left":"0","unit":"px","isLinked":false}}},"descriptionMargin":{"type":"object","default":{"desktop":{"top":0,"right":0,"bottom":0,"left":0,"unit":"px","isLinked":true},"tablet":{"top":0,"right":0,"bottom":0,"left":0,"unit":"px","isLinked":true},"mobile":{"top":0,"right":0,"bottom":0,"left":0,"unit":"px","isLinked":true}}},"buttonFontFamily":{"type":"string","default":""},"buttonFontSizeDesktop":{"type":"number","default":16},"buttonFontSizeTablet":{"type":"number","default":16},"buttonFontSizeMobile":{"type":"number","default":16},"buttonFontWeight":{"type":"string","default":""},"buttonTextTransform":{"type":"string","default":"none"},"buttonLineHeightDesktop":{"type":"number","default":1.1},"buttonLineHeightTablet":{"type":"number","default":1.2},"buttonLineHeightMobile":{"type":"number","default":1.3},"buttonPadding":{"type":"object","default":{"desktop":{"top":"12","right":"21","bottom":"12","left":"21","unit":"px","isLinked":false},"tablet":{"top":"12","right":"21","bottom":"12","left":"21","unit":"px","isLinked":false},"mobile":{"top":"12","right":"21","bottom":"12","left":"21","unit":"px","isLinked":false}}},"buttonMargin":{"type":"object","default":{"desktop":{"top":0,"right":0,"bottom":0,"left":0,"unit":"px","isLinked":false},"tablet":{"top":0,"right":0,"bottom":0,"left":0,"unit":"px","isLinked":false},"mobile":{"top":0,"right":0,"bottom":0,"left":0,"unit":"px","isLinked":false}}},"buttonTextColor":{"type":"string","default":""},"buttonBgColor":{"type":"string","default":""},"bgType":{"type":"string","default":"gradient"},"bgColor":{"type":"string","default":""},"bgGradient1":{"type":"string","default":""},"bgGradient2":{"type":"string","default":""},"bgGradientAngle":{"type":"number","default":90}},"supports":{"html":false,"align":["left","right","full"]},"textdomain":"call-to-action-block","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-view.css","render":"file:./render.php","viewScript":["file:./view.js","react","react-dom"]}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/call-to-action-block","version":"0.1.0","title":"Call To Action Block","category":"widgets","icon":"megaphone","description":"A simple, customizable call-to-action block for Gutenberg.","example":{},"attributes":{"icon":{"type":"string","default":"ri-megaphone-line"},"layoutStyle":{"type":"string","default":"default"},"alignment":{"type":"string","default":"center"},"subHeading":{"type":"string","default":"Free consultation"},"headingTag":{"type":"string","default":"h2"},"heading":{"type":"string","default":"Welcome to Our Web Experience"},"headingColor":{"type":"string","default":""},"descriptionColor":{"type":"string","default":""},"description":{"type":"string","default":"Beautiful UI sections, interactive features, and smooth animations."},"buttonText":{"type":"string","default":"Get Started"},"buttonUrl":{"type":"string","default":"#"},"sectionPadding":{"type":"object","default":{"desktop":{"top":"100","right":"0","bottom":"100","left":"0","unit":"px","isLinked":true},"tablet":{"top":"70","right":"0","bottom":"70","left":"0","unit":"px","isLinked":true},"mobile":{"top":"50","right":"0","bottom":"50","left":"0","unit":"px","isLinked":true}}},"sectionMargin":{"type":"object","default":{"desktop":{"top":0,"right":0,"bottom":0,"left":0,"unit":"px","isLinked":true},"tablet":{"top":0,"right":0,"bottom":0,"left":0,"unit":"px","isLinked":true},"mobile":{"top":0,"right":0,"bottom":0,"left":0,"unit":"px","isLinked":true}}},"headingFontFamily":{"type":"string","default":""},"headingFontSizeDesktop":{"type":"number","default":40},"headingFontSizeTablet":{"type":"number","default":28},"headingFontSizeMobile":{"type":"number","default":22},"headingFontWeight":{"type":"string","default":"700"},"headingTextTransform":{"type":"string","default":"none"},"headingLineHeightDesktop":{"type":"number","default":1.1},"headingLineHeightTablet":{"type":"number","default":1.2},"headingLineHeightMobile":{"type":"number","default":1.3},"headingPadding":{"type":"object","default":{"desktop":{"top":"0","right":"0","bottom":"10","left":"0","unit":"px","isLinked":false},"tablet":{"top":"0","right":"0","bottom":"10","left":"0","unit":"px","isLinked":false},"mobile":{"top":"0","right":"0","bottom":"10","left":"0","unit":"px","isLinked":false}}},"headingMargin":{"type":"object","default":{"desktop":{"top":0,"right":0,"bottom":0,"left":0,"unit":"px","isLinked":false},"tablet":{"top":0,"right":0,"bottom":0,"left":0,"unit":"px","isLinked":false},"mobile":{"top":0,"right":0,"bottom":0,"left":0,"unit":"px","isLinked":false}}},"descriptionFontFamily":{"type":"string","default":""},"descriptionFontSizeDesktop":{"type":"number","default":18},"descriptionFontSizeTablet":{"type":"number","default":18},"descriptionFontSizeMobile":{"type":"number","default":16},"descriptionFontWeight":{"type":"string","default":""},"descriptionTextTransform":{"type":"string","default":"none"},"descriptionLineHeightDesktop":{"type":"number","default":1.1},"descriptionLineHeightTablet":{"type":"number","default":1.2},"descriptionLineHeightMobile":{"type":"number","default":1.3},"descriptionPadding":{"type":"object","default":{"desktop":{"top":"0","right":"0","bottom":"30","left":"0","unit":"px","isLinked":false},"tablet":{"top":"0","right":"0","bottom":"30","left":"0","unit":"px","isLinked":false},"mobile":{"top":"0","right":"0","bottom":"30","left":"0","unit":"px","isLinked":false}}},"descriptionMargin":{"type":"object","default":{"desktop":{"top":0,"right":0,"bottom":0,"left":0,"unit":"px","isLinked":true},"tablet":{"top":0,"right":0,"bottom":0,"left":0,"unit":"px","isLinked":true},"mobile":{"top":0,"right":0,"bottom":0,"left":0,"unit":"px","isLinked":true}}},"buttonFontFamily":{"type":"string","default":""},"buttonFontSizeDesktop":{"type":"number","default":16},"buttonFontSizeTablet":{"type":"number","default":16},"buttonFontSizeMobile":{"type":"number","default":16},"buttonFontWeight":{"type":"string","default":""},"buttonTextTransform":{"type":"string","default":"none"},"buttonLineHeightDesktop":{"type":"number","default":1.1},"buttonLineHeightTablet":{"type":"number","default":1.2},"buttonLineHeightMobile":{"type":"number","default":1.3},"buttonPadding":{"type":"object","default":{"desktop":{"top":"12","right":"21","bottom":"12","left":"21","unit":"px","isLinked":false},"tablet":{"top":"12","right":"21","bottom":"12","left":"21","unit":"px","isLinked":false},"mobile":{"top":"12","right":"21","bottom":"12","left":"21","unit":"px","isLinked":false}}},"buttonMargin":{"type":"object","default":{"desktop":{"top":0,"right":0,"bottom":0,"left":0,"unit":"px","isLinked":false},"tablet":{"top":0,"right":0,"bottom":0,"left":0,"unit":"px","isLinked":false},"mobile":{"top":0,"right":0,"bottom":0,"left":0,"unit":"px","isLinked":false}}},"buttonTextColor":{"type":"string","default":""},"buttonBgColor":{"type":"string","default":""},"bgType":{"type":"string","default":"gradient"},"bgColor":{"type":"string","default":""},"bgGradient1":{"type":"string","default":""},"bgGradient2":{"type":"string","default":""},"bgGradientAngle":{"type":"number","default":90}},"supports":{"html":false,"align":["left","right","full"]},"textdomain":"call-to-action-block","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-view.css","render":"file:./render.php","viewScript":["file:./view.js","react","react-dom"]}');
 
 /***/ }),
 
@@ -1642,7 +1732,9 @@ function Edit({
                     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("a", {
                       href: "tel:000-000-0000",
                       className: "ctaBtn tel-btn",
-                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("i", {
+                        class: "ri-phone-line"
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
                         className: "num",
                         children: "0000-000-000"
                       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {

@@ -5,8 +5,9 @@ import { TypographyControl } from './Style/TypographyControl';
 import ColorControl from './Style/ColorControl';
 import DimensionControl from './Style/DimensionControl';
 import BackgroundColor from './Style/BackgroundColor';
+import IconSelector from './Style/IconSelector';
 function Settings({ attributes, setAttributes }) {
-    const { headingTag, alignment, headingColor, buttonText, buttonUrl, headingPadding, headingMargin, sectionPadding, sectionMargin } = attributes;
+    const { headingTag, alignment, headingColor, buttonText, buttonUrl, headingPadding, headingMargin, sectionPadding, sectionMargin, icon } = attributes;
     {/* Inspector Settings */ }
     return (
         <>
@@ -71,6 +72,10 @@ function Settings({ attributes, setAttributes }) {
                         label="Margin"
                         value={sectionMargin}
                         onChange={(newVal) => setAttributes({ sectionMargin: newVal })}
+                    />
+                    <IconSelector
+                        value={icon}
+                        onChange={(icon) => setAttributes({ icon })}
                     />
                 </PanelBody>
                 <PanelBody title={__('Heading Styles', 'call-to-action-block')} initialOpen={false}>

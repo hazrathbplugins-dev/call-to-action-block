@@ -74,6 +74,7 @@ export default function Edit({ attributes, setAttributes }) {
 									<ul className="pContact004__btnList">
 										<li>
 											<a href="tel:000-000-0000" className="ctaBtn tel-btn">
+												<i class="ri-phone-line"></i>
 												<span className="num">0000-000-000</span>
 												<span className="sub">Business hours: 9:00 - 18:00 (closed on weekends and holidays)</span>
 											</a>

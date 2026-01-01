@@ -14,6 +14,10 @@ return array(
 			
 		),
 		'attributes' => array(
+			'icon' => array(
+				'type' => 'string',
+				'default' => 'ri-megaphone-line'
+			),
 			'layoutStyle' => array(
 				'type' => 'string',
 				'default' => 'default'

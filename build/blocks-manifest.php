@@ -14,9 +14,21 @@ return array(
 			
 		),
 		'attributes' => array(
-			'icon' => array(
+			'contactIcon' => array(
 				'type' => 'string',
 				'default' => 'ri-megaphone-line'
+			),
+			'contactLabel' => array(
+				'type' => 'string',
+				'default' => '0000-000-000'
+			),
+			'contactNumber' => array(
+				'type' => 'string',
+				'default' => '0000000000'
+			),
+			'contactInfo' => array(
+				'type' => 'string',
+				'default' => 'Business hours: 9:00 - 18:00 (closed on weekends and holidays)'
 			),
 			'layoutStyle' => array(
 				'type' => 'string',
@@ -38,13 +50,21 @@ return array(
 				'type' => 'string',
 				'default' => 'Welcome to Our Web Experience'
 			),
-			'headingColor' => array(
+			'subHeadingColor' => array(
 				'type' => 'string',
 				'default' => ''
 			),
-			'descriptionColor' => array(
+			'subHeadingBgColor' => array(
 				'type' => 'string',
 				'default' => ''
+			),
+			'headingColor' => array(
+				'type' => 'string',
+				'default' => '#fff'
+			),
+			'descriptionColor' => array(
+				'type' => 'string',
+				'default' => '#fff'
 			),
 			'description' => array(
 				'type' => 'string',
@@ -116,9 +136,25 @@ return array(
 					)
 				)
 			),
+			'subHeadingFontFamily' => array(
+				'type' => 'string',
+				'default' => ''
+			),
 			'headingFontFamily' => array(
 				'type' => 'string',
 				'default' => ''
+			),
+			'subHeadingFontSizeDesktop' => array(
+				'type' => 'number',
+				'default' => 12
+			),
+			'subHeadingFontSizeTablet' => array(
+				'type' => 'number',
+				'default' => 12
+			),
+			'subHeadingFontSizeMobile' => array(
+				'type' => 'number',
+				'default' => 12
 			),
 			'headingFontSizeDesktop' => array(
 				'type' => 'number',
@@ -132,6 +168,14 @@ return array(
 				'type' => 'number',
 				'default' => 22
 			),
+			'subHeadingFontWeight' => array(
+				'type' => 'string',
+				'default' => '600'
+			),
+			'subHeadingTextTransform' => array(
+				'type' => 'string',
+				'default' => 'none'
+			),
 			'headingFontWeight' => array(
 				'type' => 'string',
 				'default' => '700'
@@ -139,6 +183,18 @@ return array(
 			'headingTextTransform' => array(
 				'type' => 'string',
 				'default' => 'none'
+			),
+			'subHeadingLineHeightDesktop' => array(
+				'type' => 'number',
+				'default' => 1.1
+			),
+			'subHeadingLineHeightTablet' => array(
+				'type' => 'number',
+				'default' => 1.2
+			),
+			'subHeadingLineHeightMobile' => array(
+				'type' => 'number',
+				'default' => 1.3
 			),
 			'headingLineHeightDesktop' => array(
 				'type' => 'number',
@@ -151,6 +207,64 @@ return array(
 			'headingLineHeightMobile' => array(
 				'type' => 'number',
 				'default' => 1.3
+			),
+			'subHeadingPadding' => array(
+				'type' => 'object',
+				'default' => array(
+					'desktop' => array(
+						'top' => '10',
+						'right' => '12',
+						'bottom' => '10',
+						'left' => '12',
+						'unit' => 'px',
+						'isLinked' => false
+					),
+					'tablet' => array(
+						'top' => '10',
+						'right' => '12',
+						'bottom' => '10',
+						'left' => '12',
+						'unit' => 'px',
+						'isLinked' => false
+					),
+					'mobile' => array(
+						'top' => '10',
+						'right' => '12',
+						'bottom' => '10',
+						'left' => '12',
+						'unit' => 'px',
+						'isLinked' => false
+					)
+				)
+			),
+			'subHeadingMargin' => array(
+				'type' => 'object',
+				'default' => array(
+					'desktop' => array(
+						'top' => 0,
+						'right' => 0,
+						'bottom' => 0,
+						'left' => 0,
+						'unit' => 'px',
+						'isLinked' => false
+					),
+					'tablet' => array(
+						'top' => 0,
+						'right' => 0,
+						'bottom' => 0,
+						'left' => 0,
+						'unit' => 'px',
+						'isLinked' => false
+					),
+					'mobile' => array(
+						'top' => 0,
+						'right' => 0,
+						'bottom' => 0,
+						'left' => 0,
+						'unit' => 'px',
+						'isLinked' => false
+					)
+				)
 			),
 			'headingPadding' => array(
 				'type' => 'object',
@@ -400,7 +514,7 @@ return array(
 			),
 			'buttonTextColor' => array(
 				'type' => 'string',
-				'default' => ''
+				'default' => '#fff'
 			),
 			'buttonBgColor' => array(
 				'type' => 'string',
@@ -425,6 +539,18 @@ return array(
 			'bgGradientAngle' => array(
 				'type' => 'number',
 				'default' => 90
+			),
+			'contactInfoColor' => array(
+				'type' => 'string',
+				'default' => ''
+			),
+			'contactNumberColor' => array(
+				'type' => 'string',
+				'default' => ''
+			),
+			'availableInfoColor' => array(
+				'type' => 'string',
+				'default' => ''
 			)
 		),
 		'supports' => array(

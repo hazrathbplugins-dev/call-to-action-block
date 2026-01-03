@@ -31,7 +31,6 @@
   max-width: 600px;
   margin: 0 auto 2rem;
   line-height: 1.5;
-  color: #fff;
 }
 .cta-button {
   background-color: #00c9a7;
@@ -76,13 +75,16 @@
   background: linear-gradient(90deg, #009CA6, #11BCC7);
   opacity: 0.9;
 }
+.wp-block-create-block-call-to-action-block.simple .hero-content span.sub {
+  color: #333;
+}
 .pContact004 a, .pContact004 p {
   color: #333;
 }
-.pContact004 .main-heading {
+.wp-block-create-block-call-to-action-block .hero-content .main-heading {
   color: #009CA6;
 }
-.pContact004__textArea span.sub {
+.pContact004__textArea span.sub-heading {
   display: inline-block;
   font-size: 0.5em;
   color: #FFF;
@@ -143,9 +145,6 @@ ul.pContact004__btnList li {
   align-items: center;
   width: 100%;
 }
-ul.pContact004__btnList li + li {
-  margin-top: 30px;
-}
 ul.pContact004__btnList li p.call {
   color: #009CA6;
   margin: 0 0 10px;
@@ -155,23 +154,6 @@ ul.pContact004__btnList li p.call span {
   padding: 0 1em;
   position: relative;
   display: inline-block;
-}
-ul.pContact004__btnList li p.call span::before,
-ul.pContact004__btnList li p.call span::after {
-  content: "";
-  position: absolute;
-  width: 1px;
-  height: 1em;
-  background: #009CA6;
-  bottom: 0;
-}
-ul.pContact004__btnList li p.call span::before {
-  left: 0;
-  transform: rotate(-10deg);
-}
-ul.pContact004__btnList li p.call span::after {
-  right: 0;
-  transform: rotate(10deg);
 }
 @media print, screen and (max-width: 769px) {
   .pContact004__innerItem {
@@ -201,20 +183,9 @@ a.ctaBtn {
 a.ctaBtn:hover {
   opacity: 0.6;
 }
-/* 電話 */
 a.ctaBtn.tel-btn span.num {
   font-size: 2.38em;
 }
-a.ctaBtn.tel-btn span.num::before {
-  font-family: "Material Symbols Outlined";
-  content: "\e0b0"; /** Code point を入力 */
-  color: #009CA6;
-  font-size: 1.2em;
-  padding-right: 0.5em;
-  position: relative;
-  top: 0.15em;
-}
-/* メール */
 a.ctaBtn.mail-btn {
   color: #009CA6;
   background: #F3FAFB;
@@ -222,30 +193,16 @@ a.ctaBtn.mail-btn {
   border: 2px solid;
   border-radius: 30px;
   box-shadow: 5px 5px 0 #E2EDEF;
+  text-decoration: none;
+}
+a.ctaBtn.mail-btn i {
+  font-size: 1.2em;
+  vertical-align: middle;
+  margin-left: 0.3em;
 }
 a.ctaBtn.mail-btn span {
   position: relative;
   padding-right: 1.5em;
-}
-a.ctaBtn.mail-btn span::before {
-  font-family: "Material Symbols Outlined";
-  content: "\e158"; /** Code point を入力 */
-  font-size: 1.2em;
-  padding-right: 0.5em;
-  position: relative;
-  top: 0.15em;
-}
-a.ctaBtn.mail-btn span::after {
-  display: block;
-  content: "";
-  position: absolute;
-  top: 50%;
-  right: 0;
-  width: 6px;
-  height: 6px;
-  border-right: 2px solid;
-  border-bottom: 2px solid;
-  transform: rotate(-45deg) translateY(-50%);
 }
 
 /*# sourceMappingURL=style-view.css.map*/

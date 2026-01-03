@@ -3,7 +3,7 @@ Contributors:      hazrathali
 Tags:              call-to-action, cta, gutenberg-block, marketing, landing-page,
 Requires at least: 6.7
 Tested up to:      6.8
-Stable tag:        0.1.0
+Stable tag:        1.0.1
 Requires PHP:      7.4
 License:           GPL-2.0-or-later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
@@ -54,13 +54,38 @@ Requirements:
 
 == Frequently Asked Questions ==
 
-= A question that someone might have =
+= What is the Call To Action Block for Gutenberg? =
+The Call To Action Block is a lightweight Gutenberg block that helps you create high-converting CTA sections inside the WordPress Block Editor. It allows you to add a headline, description, and button with full design control — without using any page builder or custom code.
 
-An answer to that question.
+= Do I need Elementor or another page builder to use this block? =
+No. This plugin is built exclusively for the Gutenberg (Block) Editor and works out of the box with WordPress. You don’t need Elementor, WPBakery, or any third-party page builder.
 
-= What about foo bar? =
+= Can I customize the button style and link? =
+Yes. You can fully customize the button text, URL, alignment, colors, typography, and hover effects directly from the block settings panel. This makes it easy to match your CTA with your website’s branding.
 
-Answer to foo bar dilemma.
+= Is the Call To Action block responsive? =
+Absolutely. The block includes responsive controls for desktop, tablet, and mobile. Your CTA will look great on all screen sizes without requiring any additional CSS.
+
+= Can I use gradients or background colors? =
+Yes. You can choose between a solid background color or a smooth gradient background. This helps your call-to-action section stand out and grab attention.
+
+= Will this plugin slow down my website? =
+No. The Call To Action Block is lightweight and performance-optimized. It does not use jQuery or load unnecessary assets, ensuring fast page load times.
+
+= Is this plugin compatible with the latest WordPress version? =
+Yes. The plugin is tested up to WordPress 6.8 and follows modern block development standards to ensure long-term compatibility.
+
+= Can I use multiple Call To Action blocks on the same page? =
+Yes. You can add unlimited CTA blocks on a single page or across your site, each with its own content and styling.
+
+= Does this block work with any WordPress theme? =
+Yes. The block is designed to be theme-independent and works with all Gutenberg-compatible WordPress themes.
+
+= Is the plugin free to use? =
+Yes. The Call To Action Block is 100% free and open-source, licensed under GPL-2.0-or-later.
+
+= Where can I report bugs or request features? =
+You can report issues or request new features via the WordPress.org support forum for this plugin. Your feedback helps improve future updates.
 
 == Screenshots ==
 
@@ -72,8 +97,23 @@ directory take precedence. For example, `/assets/screenshot-1.png` would win ove
 
 == Changelog ==
 
+= 1.0.1 =
+
+* Release New Layout
+* Add New Style Control
+* Optimise block code
+
 = 0.1.0 =
+
 * Release
+
+== Upgrade Notice ==
+
+= 1.0.1 =
+
+* Release New Layout
+* Add New Style Control
+* Optimise block code
 
 == Arbitrary section ==
 

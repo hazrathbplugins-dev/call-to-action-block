@@ -9,9 +9,21 @@
 	"description": "A simple, customizable call-to-action block for Gutenberg.",
 	"example": {},
 	"attributes": {
-		"icon": {
+		"contactIcon": {
 			"type": "string",
 			"default": "ri-megaphone-line"
+		},
+		"contactLabel": {
+			"type": "string",
+			"default": "0000-000-000"
+		},
+		"contactNumber": {
+			"type": "string",
+			"default": "0000000000"
+		},
+		"contactInfo": {
+			"type": "string",
+			"default": "Business hours: 9:00 - 18:00 (closed on weekends and holidays)"
 		},
 		"layoutStyle": {
 			"type": "string",
@@ -33,13 +45,21 @@
 			"type": "string",
 			"default": "Welcome to Our Web Experience"
 		},
-		"headingColor": {
+		"subHeadingColor": {
 			"type": "string",
 			"default": ""
 		},
-		"descriptionColor": {
+		"subHeadingBgColor": {
 			"type": "string",
 			"default": ""
+		},
+		"headingColor": {
+			"type": "string",
+			"default": "#fff"
+		},
+		"descriptionColor": {
+			"type": "string",
+			"default": "#fff"
 		},
 		"description": {
 			"type": "string",
@@ -111,9 +131,25 @@
 				}
 			}
 		},
+		"subHeadingFontFamily": {
+			"type": "string",
+			"default": ""
+		},
 		"headingFontFamily": {
 			"type": "string",
 			"default": ""
+		},
+		"subHeadingFontSizeDesktop": {
+			"type": "number",
+			"default": 12
+		},
+		"subHeadingFontSizeTablet": {
+			"type": "number",
+			"default": 12
+		},
+		"subHeadingFontSizeMobile": {
+			"type": "number",
+			"default": 12
 		},
 		"headingFontSizeDesktop": {
 			"type": "number",
@@ -127,6 +163,14 @@
 			"type": "number",
 			"default": 22
 		},
+		"subHeadingFontWeight": {
+			"type": "string",
+			"default": "600"
+		},
+		"subHeadingTextTransform": {
+			"type": "string",
+			"default": "none"
+		},
 		"headingFontWeight": {
 			"type": "string",
 			"default": "700"
@@ -134,6 +178,18 @@
 		"headingTextTransform": {
 			"type": "string",
 			"default": "none"
+		},
+		"subHeadingLineHeightDesktop": {
+			"type": "number",
+			"default": 1.1
+		},
+		"subHeadingLineHeightTablet": {
+			"type": "number",
+			"default": 1.2
+		},
+		"subHeadingLineHeightMobile": {
+			"type": "number",
+			"default": 1.3
 		},
 		"headingLineHeightDesktop": {
 			"type": "number",
@@ -146,6 +202,64 @@
 		"headingLineHeightMobile": {
 			"type": "number",
 			"default": 1.3
+		},
+		"subHeadingPadding": {
+			"type": "object",
+			"default": {
+				"desktop": {
+					"top": "10",
+					"right": "12",
+					"bottom": "10",
+					"left": "12",
+					"unit": "px",
+					"isLinked": false
+				},
+				"tablet": {
+					"top": "10",
+					"right": "12",
+					"bottom": "10",
+					"left": "12",
+					"unit": "px",
+					"isLinked": false
+				},
+				"mobile": {
+					"top": "10",
+					"right": "12",
+					"bottom": "10",
+					"left": "12",
+					"unit": "px",
+					"isLinked": false
+				}
+			}
+		},
+		"subHeadingMargin": {
+			"type": "object",
+			"default": {
+				"desktop": {
+					"top": 0,
+					"right": 0,
+					"bottom": 0,
+					"left": 0,
+					"unit": "px",
+					"isLinked": false
+				},
+				"tablet": {
+					"top": 0,
+					"right": 0,
+					"bottom": 0,
+					"left": 0,
+					"unit": "px",
+					"isLinked": false
+				},
+				"mobile": {
+					"top": 0,
+					"right": 0,	
+					"bottom": 0,
+					"left": 0,
+					"unit": "px",
+					"isLinked": false
+				}
+			}
 		},
 		"headingPadding": {
 			"type": "object",
@@ -395,7 +509,7 @@
 		},
 		"buttonTextColor": {
 			"type": "string",
-			"default": ""
+			"default": "#fff"
 		},
 		"buttonBgColor": {
 			"type": "string",
@@ -420,6 +534,18 @@
 		"bgGradientAngle": {
 			"type": "number",
 			"default": 90
+		},
+		"contactInfoColor": {
+			"type": "string",
+			"default": ""
+		},
+		"contactNumberColor": {
+			"type": "string",
+			"default": ""
+		},
+		"availableInfoColor": {
+			"type": "string",
+			"default": ""
 		}
 	},
 	"supports": {

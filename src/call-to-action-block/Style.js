@@ -54,6 +54,18 @@ const Style = ({ attributes }) => {
         bgGradientAngle,
         sectionPadding,
         sectionMargin,
+        subHeadingFontSizeDesktop,
+        subHeadingLineHeightDesktop,
+        subHeadingFontFamily,
+        subHeadingFontWeight,
+        subHeadingTextTransform,
+        subHeadingColor,
+        subHeadingBgColor,
+        subHeadingPadding,
+        subHeadingMargin,
+        contactNumberColor,
+        contactInfoColor,
+        availableInfoColor
     } = attributes;
 
     /* ------------------------------------------------------------------
@@ -107,6 +119,8 @@ const Style = ({ attributes }) => {
     /* ------------------------------------------------------------------
        Padding / Margin for every element
        ------------------------------------------------------------------ */
+    const subHeadingPad = getResponsive(subHeadingPadding);
+    const subHeadingMar = getResponsive(subHeadingMargin);
     const headingPad = getResponsive(headingPadding);
     const headingMar = getResponsive(headingMargin);
     const descPad = getResponsive(descriptionPadding);
@@ -163,6 +177,17 @@ const Style = ({ attributes }) => {
                 .callToActionBlock {
                     text-align: ${attributes?.alignment || 'center'};
                 }
+                /* -------------------------------------------------
+				   SUB HEADING
+				   ------------------------------------------------- */
+				.wp-block-create-block-call-to-action-block .hero-content .sub-heading {
+					color: ${subHeadingColor || 'inherit'};
+                    background-color: ${subHeadingBgColor};
+					${typo('subHeading', subHeadingFontFamily, subHeadingFontWeight, subHeadingTextTransform,
+                subHeadingFontSizeDesktop, subHeadingLineHeightDesktop)}
+					padding: ${subHeadingPad.desktop};
+					margin: ${subHeadingMar.desktop};
+				}
 
 				/* -------------------------------------------------
 				   HEADING
@@ -185,6 +210,18 @@ const Style = ({ attributes }) => {
 					padding: ${descPad.desktop};
 					margin: ${descMar.desktop};
 				}
+
+                .wp-block-create-block-call-to-action-block .hero-content .ctaBtn.tel-btn .num {
+                    color: ${contactNumberColor || 'inherit'};
+                }
+
+                .wp-block-create-block-call-to-action-block .hero-content .ctaBtn.tel-btn .sub {
+                    color: ${contactInfoColor || 'inherit'};
+                }
+
+                .wp-block-create-block-call-to-action-block .hero-content .call {
+                    color: ${availableInfoColor || 'inherit'};
+                }
 
 				/* -------------------------------------------------
 				   BUTTON

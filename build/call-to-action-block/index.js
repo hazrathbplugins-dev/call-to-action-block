@@ -207,6 +207,7 @@ function Settings({
   setAttributes
 }) {
   const {
+    layoutStyle,
     headingTag,
     alignment,
     headingColor,
@@ -216,7 +217,10 @@ function Settings({
     headingMargin,
     sectionPadding,
     sectionMargin,
-    icon
+    contactIcon,
+    contactLabel,
+    contactNumber,
+    contactInfo
   } = attributes;
   {/* Inspector Settings */}
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.Fragment, {
@@ -277,6 +281,29 @@ function Settings({
           onChange: value => setAttributes({
             alignment: value
           })
+        }), layoutStyle == 'simple' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextControl, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Contact Label', 'call-to-action-block'),
+          value: contactLabel,
+          onChange: value => setAttributes({
+            contactLabel: value
+          })
+        }), layoutStyle == 'simple' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Style_IconSelector__WEBPACK_IMPORTED_MODULE_7__["default"], {
+          value: contactIcon,
+          onChange: contactIcon => setAttributes({
+            contactIcon
+          })
+        }), layoutStyle == 'simple' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextControl, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Contact Number', 'call-to-action-block'),
+          value: contactNumber,
+          onChange: value => setAttributes({
+            contactNumber: value
+          })
+        }), layoutStyle == 'simple' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextControl, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Contact Info', 'call-to-action-block'),
+          value: contactInfo,
+          onChange: value => setAttributes({
+            contactInfo: value
+          })
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
         title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Button', 'call-to-action-block'),
@@ -315,10 +342,41 @@ function Settings({
           onChange: newVal => setAttributes({
             sectionMargin: newVal
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Style_IconSelector__WEBPACK_IMPORTED_MODULE_7__["default"], {
-          value: icon,
-          onChange: icon => setAttributes({
-            icon
+        })]
+      }), layoutStyle == 'simple' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
+        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Sub Heading Styles', 'call-to-action-block'),
+        initialOpen: false,
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Style_TypographyControl__WEBPACK_IMPORTED_MODULE_3__.TypographyControl, {
+          attributes: attributes,
+          setAttributes: setAttributes,
+          prefix: "subHeading"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Style_ColorControl__WEBPACK_IMPORTED_MODULE_4__["default"], {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Color', 'call-to-action-block'),
+          value: attributes.subHeadingColor,
+          onChange: color => setAttributes({
+            subHeadingColor: color
+          }),
+          defaultColor: "",
+          className: "color-picker-control"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Style_ColorControl__WEBPACK_IMPORTED_MODULE_4__["default"], {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Background Color', 'call-to-action-block'),
+          value: attributes.subHeadingBgColor,
+          onChange: color => setAttributes({
+            subHeadingBgColor: color
+          }),
+          defaultColor: "",
+          className: "color-picker-control"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Style_DimensionControl__WEBPACK_IMPORTED_MODULE_5__["default"], {
+          label: "Padding",
+          value: attributes.subHeadingPadding,
+          onChange: newVal => setAttributes({
+            subHeadingPadding: newVal
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Style_DimensionControl__WEBPACK_IMPORTED_MODULE_5__["default"], {
+          label: "Margin",
+          value: attributes.subHeadingMargin,
+          onChange: newVal => setAttributes({
+            subHeadingMargin: newVal
           })
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
@@ -414,6 +472,63 @@ function Settings({
           })
         })]
       })]
+    }), layoutStyle === 'simple' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InspectorControls, {
+      group: "styles",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
+        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Contact Number Styles', 'call-to-action-block'),
+        initialOpen: false,
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Style_TypographyControl__WEBPACK_IMPORTED_MODULE_3__.TypographyControl, {
+          attributes: attributes,
+          setAttributes: setAttributes,
+          prefix: "subHeading"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Style_ColorControl__WEBPACK_IMPORTED_MODULE_4__["default"], {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Color', 'call-to-action-block'),
+          value: attributes.contactNumberColor,
+          onChange: color => setAttributes({
+            contactNumberColor: color
+          }),
+          defaultColor: "",
+          className: "color-picker-control"
+        })]
+      })
+    }), layoutStyle === 'simple' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InspectorControls, {
+      group: "styles",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
+        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Contact Info Styles', 'call-to-action-block'),
+        initialOpen: false,
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Style_TypographyControl__WEBPACK_IMPORTED_MODULE_3__.TypographyControl, {
+          attributes: attributes,
+          setAttributes: setAttributes,
+          prefix: "subHeading"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Style_ColorControl__WEBPACK_IMPORTED_MODULE_4__["default"], {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Color', 'call-to-action-block'),
+          value: attributes.contactInfoColor,
+          onChange: color => setAttributes({
+            contactInfoColor: color
+          }),
+          defaultColor: "",
+          className: "color-picker-control"
+        })]
+      })
+    }), layoutStyle === 'simple' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InspectorControls, {
+      group: "styles",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
+        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Available Info Styles', 'call-to-action-block'),
+        initialOpen: false,
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Style_TypographyControl__WEBPACK_IMPORTED_MODULE_3__.TypographyControl, {
+          attributes: attributes,
+          setAttributes: setAttributes,
+          prefix: "subHeading"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_Style_ColorControl__WEBPACK_IMPORTED_MODULE_4__["default"], {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)('Color', 'call-to-action-block'),
+          value: attributes.availableInfoColor,
+          onChange: color => setAttributes({
+            availableInfoColor: color
+          }),
+          defaultColor: "",
+          className: "color-picker-control"
+        })]
+      })
     })]
   });
 }
@@ -892,6 +1007,17 @@ const TypographyControl = ({
   const resetTypography = () => {
     // Default values based on prefix (heading or subHeading)
     const defaults = {
+      subHeading: {
+        FontFamily: '',
+        FontWeight: '600',
+        TextTransform: 'none',
+        FontSizeDesktop: 12,
+        FontSizeTablet: 12,
+        FontSizeMobile: 12,
+        LineHeightDesktop: 1.3,
+        LineHeightTablet: 1.4,
+        LineHeightMobile: 1.5
+      },
       heading: {
         FontFamily: '',
         FontWeight: '700',
@@ -1072,7 +1198,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   REMIX_ICONS: () => (/* binding */ REMIX_ICONS)
 /* harmony export */ });
-const REMIX_ICONS = ['ri-megaphone-line', 'ri-megaphone-fill', 'ri-arrow-right-line', 'ri-phone-line', 'ri-mail-line', 'ri-star-line', 'ri-heart-line', 'ri-shopping-cart-line'];
+const REMIX_ICONS = ['ri-megaphone-line', 'ri-megaphone-fill', 'ri-arrow-right-line', 'ri-phone-line', 'ri-mail-line', 'ri-star-line', 'ri-heart-line', 'ri-shopping-cart-line', 'ri-check-line', 'ri-information-line', 'ri-arrow-right-s-line', 'ri-arrow-left-s-line', 'ri-arrow-up-s-line', 'ri-arrow-down-s-line', 'ri-arrow-left-long-line', 'ri-arrow-right-long-line', 'ri-arrow-left-down-long-fill', 'ri-arrow-right-down-long-fill'];
 
 /***/ }),
 
@@ -1119,9 +1245,14 @@ const Toolbar = ({
       children: Themes.map(item => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_1__.ToolbarButton, {
         icon: item.icon,
         isPressed: layoutStyle === item.key,
-        onClick: () => setAttributes({
-          layoutStyle: item.key
-        }),
+        onClick: () => {
+          setAttributes({
+            layoutStyle: item.key,
+            descriptionColor: item.key === 'default' ? '#fff' : '#333',
+            headingColor: item.key === 'default' ? '#fff' : '#009CA6',
+            buttonTextColor: item.key === 'default' ? '#fff' : '#009CA6'
+          });
+        },
         label: `${item.label} Theme`,
         children: item.label
       }, item.key))
@@ -1398,7 +1529,19 @@ const Style = ({
     bgGradient2,
     bgGradientAngle,
     sectionPadding,
-    sectionMargin
+    sectionMargin,
+    subHeadingFontSizeDesktop,
+    subHeadingLineHeightDesktop,
+    subHeadingFontFamily,
+    subHeadingFontWeight,
+    subHeadingTextTransform,
+    subHeadingColor,
+    subHeadingBgColor,
+    subHeadingPadding,
+    subHeadingMargin,
+    contactNumberColor,
+    contactInfoColor,
+    availableInfoColor
   } = attributes;
 
   /* ------------------------------------------------------------------
@@ -1443,6 +1586,8 @@ const Style = ({
   /* ------------------------------------------------------------------
      Padding / Margin for every element
      ------------------------------------------------------------------ */
+  const subHeadingPad = getResponsive(subHeadingPadding);
+  const subHeadingMar = getResponsive(subHeadingMargin);
   const headingPad = getResponsive(headingPadding);
   const headingMar = getResponsive(headingMargin);
   const descPad = getResponsive(descriptionPadding);
@@ -1501,6 +1646,16 @@ const Style = ({
                 .callToActionBlock {
                     text-align: ${attributes?.alignment || 'center'};
                 }
+                /* -------------------------------------------------
+				   SUB HEADING
+				   ------------------------------------------------- */
+				.wp-block-create-block-call-to-action-block .hero-content .sub-heading {
+					color: ${subHeadingColor || 'inherit'};
+                    background-color: ${subHeadingBgColor};
+					${typo('subHeading', subHeadingFontFamily, subHeadingFontWeight, subHeadingTextTransform, subHeadingFontSizeDesktop, subHeadingLineHeightDesktop)}
+					padding: ${subHeadingPad.desktop};
+					margin: ${subHeadingMar.desktop};
+				}
 
 				/* -------------------------------------------------
 				   HEADING
@@ -1521,6 +1676,18 @@ const Style = ({
 					padding: ${descPad.desktop};
 					margin: ${descMar.desktop};
 				}
+
+                .wp-block-create-block-call-to-action-block .hero-content .ctaBtn.tel-btn .num {
+                    color: ${contactNumberColor || 'inherit'};
+                }
+
+                .wp-block-create-block-call-to-action-block .hero-content .ctaBtn.tel-btn .sub {
+                    color: ${contactInfoColor || 'inherit'};
+                }
+
+                .wp-block-create-block-call-to-action-block .hero-content .call {
+                    color: ${availableInfoColor || 'inherit'};
+                }
 
 				/* -------------------------------------------------
 				   BUTTON
@@ -1602,7 +1769,7 @@ const Style = ({
   \*********************************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/call-to-action-block","version":"0.1.0","title":"Call To Action Block","category":"widgets","icon":"megaphone","description":"A simple, customizable call-to-action block for Gutenberg.","example":{},"attributes":{"icon":{"type":"string","default":"ri-megaphone-line"},"layoutStyle":{"type":"string","default":"default"},"alignment":{"type":"string","default":"center"},"subHeading":{"type":"string","default":"Free consultation"},"headingTag":{"type":"string","default":"h2"},"heading":{"type":"string","default":"Welcome to Our Web Experience"},"headingColor":{"type":"string","default":""},"descriptionColor":{"type":"string","default":""},"description":{"type":"string","default":"Beautiful UI sections, interactive features, and smooth animations."},"buttonText":{"type":"string","default":"Get Started"},"buttonUrl":{"type":"string","default":"#"},"sectionPadding":{"type":"object","default":{"desktop":{"top":"100","right":"0","bottom":"100","left":"0","unit":"px","isLinked":true},"tablet":{"top":"70","right":"0","bottom":"70","left":"0","unit":"px","isLinked":true},"mobile":{"top":"50","right":"0","bottom":"50","left":"0","unit":"px","isLinked":true}}},"sectionMargin":{"type":"object","default":{"desktop":{"top":0,"right":0,"bottom":0,"left":0,"unit":"px","isLinked":true},"tablet":{"top":0,"right":0,"bottom":0,"left":0,"unit":"px","isLinked":true},"mobile":{"top":0,"right":0,"bottom":0,"left":0,"unit":"px","isLinked":true}}},"headingFontFamily":{"type":"string","default":""},"headingFontSizeDesktop":{"type":"number","default":40},"headingFontSizeTablet":{"type":"number","default":28},"headingFontSizeMobile":{"type":"number","default":22},"headingFontWeight":{"type":"string","default":"700"},"headingTextTransform":{"type":"string","default":"none"},"headingLineHeightDesktop":{"type":"number","default":1.1},"headingLineHeightTablet":{"type":"number","default":1.2},"headingLineHeightMobile":{"type":"number","default":1.3},"headingPadding":{"type":"object","default":{"desktop":{"top":"0","right":"0","bottom":"10","left":"0","unit":"px","isLinked":false},"tablet":{"top":"0","right":"0","bottom":"10","left":"0","unit":"px","isLinked":false},"mobile":{"top":"0","right":"0","bottom":"10","left":"0","unit":"px","isLinked":false}}},"headingMargin":{"type":"object","default":{"desktop":{"top":0,"right":0,"bottom":0,"left":0,"unit":"px","isLinked":false},"tablet":{"top":0,"right":0,"bottom":0,"left":0,"unit":"px","isLinked":false},"mobile":{"top":0,"right":0,"bottom":0,"left":0,"unit":"px","isLinked":false}}},"descriptionFontFamily":{"type":"string","default":""},"descriptionFontSizeDesktop":{"type":"number","default":18},"descriptionFontSizeTablet":{"type":"number","default":18},"descriptionFontSizeMobile":{"type":"number","default":16},"descriptionFontWeight":{"type":"string","default":""},"descriptionTextTransform":{"type":"string","default":"none"},"descriptionLineHeightDesktop":{"type":"number","default":1.1},"descriptionLineHeightTablet":{"type":"number","default":1.2},"descriptionLineHeightMobile":{"type":"number","default":1.3},"descriptionPadding":{"type":"object","default":{"desktop":{"top":"0","right":"0","bottom":"30","left":"0","unit":"px","isLinked":false},"tablet":{"top":"0","right":"0","bottom":"30","left":"0","unit":"px","isLinked":false},"mobile":{"top":"0","right":"0","bottom":"30","left":"0","unit":"px","isLinked":false}}},"descriptionMargin":{"type":"object","default":{"desktop":{"top":0,"right":0,"bottom":0,"left":0,"unit":"px","isLinked":true},"tablet":{"top":0,"right":0,"bottom":0,"left":0,"unit":"px","isLinked":true},"mobile":{"top":0,"right":0,"bottom":0,"left":0,"unit":"px","isLinked":true}}},"buttonFontFamily":{"type":"string","default":""},"buttonFontSizeDesktop":{"type":"number","default":16},"buttonFontSizeTablet":{"type":"number","default":16},"buttonFontSizeMobile":{"type":"number","default":16},"buttonFontWeight":{"type":"string","default":""},"buttonTextTransform":{"type":"string","default":"none"},"buttonLineHeightDesktop":{"type":"number","default":1.1},"buttonLineHeightTablet":{"type":"number","default":1.2},"buttonLineHeightMobile":{"type":"number","default":1.3},"buttonPadding":{"type":"object","default":{"desktop":{"top":"12","right":"21","bottom":"12","left":"21","unit":"px","isLinked":false},"tablet":{"top":"12","right":"21","bottom":"12","left":"21","unit":"px","isLinked":false},"mobile":{"top":"12","right":"21","bottom":"12","left":"21","unit":"px","isLinked":false}}},"buttonMargin":{"type":"object","default":{"desktop":{"top":0,"right":0,"bottom":0,"left":0,"unit":"px","isLinked":false},"tablet":{"top":0,"right":0,"bottom":0,"left":0,"unit":"px","isLinked":false},"mobile":{"top":0,"right":0,"bottom":0,"left":0,"unit":"px","isLinked":false}}},"buttonTextColor":{"type":"string","default":""},"buttonBgColor":{"type":"string","default":""},"bgType":{"type":"string","default":"gradient"},"bgColor":{"type":"string","default":""},"bgGradient1":{"type":"string","default":""},"bgGradient2":{"type":"string","default":""},"bgGradientAngle":{"type":"number","default":90}},"supports":{"html":false,"align":["left","right","full"]},"textdomain":"call-to-action-block","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-view.css","render":"file:./render.php","viewScript":["file:./view.js","react","react-dom"]}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/call-to-action-block","version":"0.1.0","title":"Call To Action Block","category":"widgets","icon":"megaphone","description":"A simple, customizable call-to-action block for Gutenberg.","example":{},"attributes":{"contactIcon":{"type":"string","default":"ri-megaphone-line"},"contactLabel":{"type":"string","default":"0000-000-000"},"contactNumber":{"type":"string","default":"0000000000"},"contactInfo":{"type":"string","default":"Business hours: 9:00 - 18:00 (closed on weekends and holidays)"},"layoutStyle":{"type":"string","default":"default"},"alignment":{"type":"string","default":"center"},"subHeading":{"type":"string","default":"Free consultation"},"headingTag":{"type":"string","default":"h2"},"heading":{"type":"string","default":"Welcome to Our Web Experience"},"subHeadingColor":{"type":"string","default":""},"subHeadingBgColor":{"type":"string","default":""},"headingColor":{"type":"string","default":"#fff"},"descriptionColor":{"type":"string","default":"#fff"},"description":{"type":"string","default":"Beautiful UI sections, interactive features, and smooth animations."},"buttonText":{"type":"string","default":"Get Started"},"buttonUrl":{"type":"string","default":"#"},"sectionPadding":{"type":"object","default":{"desktop":{"top":"100","right":"0","bottom":"100","left":"0","unit":"px","isLinked":true},"tablet":{"top":"70","right":"0","bottom":"70","left":"0","unit":"px","isLinked":true},"mobile":{"top":"50","right":"0","bottom":"50","left":"0","unit":"px","isLinked":true}}},"sectionMargin":{"type":"object","default":{"desktop":{"top":0,"right":0,"bottom":0,"left":0,"unit":"px","isLinked":true},"tablet":{"top":0,"right":0,"bottom":0,"left":0,"unit":"px","isLinked":true},"mobile":{"top":0,"right":0,"bottom":0,"left":0,"unit":"px","isLinked":true}}},"subHeadingFontFamily":{"type":"string","default":""},"headingFontFamily":{"type":"string","default":""},"subHeadingFontSizeDesktop":{"type":"number","default":12},"subHeadingFontSizeTablet":{"type":"number","default":12},"subHeadingFontSizeMobile":{"type":"number","default":12},"headingFontSizeDesktop":{"type":"number","default":40},"headingFontSizeTablet":{"type":"number","default":28},"headingFontSizeMobile":{"type":"number","default":22},"subHeadingFontWeight":{"type":"string","default":"600"},"subHeadingTextTransform":{"type":"string","default":"none"},"headingFontWeight":{"type":"string","default":"700"},"headingTextTransform":{"type":"string","default":"none"},"subHeadingLineHeightDesktop":{"type":"number","default":1.1},"subHeadingLineHeightTablet":{"type":"number","default":1.2},"subHeadingLineHeightMobile":{"type":"number","default":1.3},"headingLineHeightDesktop":{"type":"number","default":1.1},"headingLineHeightTablet":{"type":"number","default":1.2},"headingLineHeightMobile":{"type":"number","default":1.3},"subHeadingPadding":{"type":"object","default":{"desktop":{"top":"10","right":"12","bottom":"10","left":"12","unit":"px","isLinked":false},"tablet":{"top":"10","right":"12","bottom":"10","left":"12","unit":"px","isLinked":false},"mobile":{"top":"10","right":"12","bottom":"10","left":"12","unit":"px","isLinked":false}}},"subHeadingMargin":{"type":"object","default":{"desktop":{"top":0,"right":0,"bottom":0,"left":0,"unit":"px","isLinked":false},"tablet":{"top":0,"right":0,"bottom":0,"left":0,"unit":"px","isLinked":false},"mobile":{"top":0,"right":0,"bottom":0,"left":0,"unit":"px","isLinked":false}}},"headingPadding":{"type":"object","default":{"desktop":{"top":"0","right":"0","bottom":"10","left":"0","unit":"px","isLinked":false},"tablet":{"top":"0","right":"0","bottom":"10","left":"0","unit":"px","isLinked":false},"mobile":{"top":"0","right":"0","bottom":"10","left":"0","unit":"px","isLinked":false}}},"headingMargin":{"type":"object","default":{"desktop":{"top":0,"right":0,"bottom":0,"left":0,"unit":"px","isLinked":false},"tablet":{"top":0,"right":0,"bottom":0,"left":0,"unit":"px","isLinked":false},"mobile":{"top":0,"right":0,"bottom":0,"left":0,"unit":"px","isLinked":false}}},"descriptionFontFamily":{"type":"string","default":""},"descriptionFontSizeDesktop":{"type":"number","default":18},"descriptionFontSizeTablet":{"type":"number","default":18},"descriptionFontSizeMobile":{"type":"number","default":16},"descriptionFontWeight":{"type":"string","default":""},"descriptionTextTransform":{"type":"string","default":"none"},"descriptionLineHeightDesktop":{"type":"number","default":1.1},"descriptionLineHeightTablet":{"type":"number","default":1.2},"descriptionLineHeightMobile":{"type":"number","default":1.3},"descriptionPadding":{"type":"object","default":{"desktop":{"top":"0","right":"0","bottom":"30","left":"0","unit":"px","isLinked":false},"tablet":{"top":"0","right":"0","bottom":"30","left":"0","unit":"px","isLinked":false},"mobile":{"top":"0","right":"0","bottom":"30","left":"0","unit":"px","isLinked":false}}},"descriptionMargin":{"type":"object","default":{"desktop":{"top":0,"right":0,"bottom":0,"left":0,"unit":"px","isLinked":true},"tablet":{"top":0,"right":0,"bottom":0,"left":0,"unit":"px","isLinked":true},"mobile":{"top":0,"right":0,"bottom":0,"left":0,"unit":"px","isLinked":true}}},"buttonFontFamily":{"type":"string","default":""},"buttonFontSizeDesktop":{"type":"number","default":16},"buttonFontSizeTablet":{"type":"number","default":16},"buttonFontSizeMobile":{"type":"number","default":16},"buttonFontWeight":{"type":"string","default":""},"buttonTextTransform":{"type":"string","default":"none"},"buttonLineHeightDesktop":{"type":"number","default":1.1},"buttonLineHeightTablet":{"type":"number","default":1.2},"buttonLineHeightMobile":{"type":"number","default":1.3},"buttonPadding":{"type":"object","default":{"desktop":{"top":"12","right":"21","bottom":"12","left":"21","unit":"px","isLinked":false},"tablet":{"top":"12","right":"21","bottom":"12","left":"21","unit":"px","isLinked":false},"mobile":{"top":"12","right":"21","bottom":"12","left":"21","unit":"px","isLinked":false}}},"buttonMargin":{"type":"object","default":{"desktop":{"top":0,"right":0,"bottom":0,"left":0,"unit":"px","isLinked":false},"tablet":{"top":0,"right":0,"bottom":0,"left":0,"unit":"px","isLinked":false},"mobile":{"top":0,"right":0,"bottom":0,"left":0,"unit":"px","isLinked":false}}},"buttonTextColor":{"type":"string","default":"#fff"},"buttonBgColor":{"type":"string","default":""},"bgType":{"type":"string","default":"gradient"},"bgColor":{"type":"string","default":""},"bgGradient1":{"type":"string","default":""},"bgGradient2":{"type":"string","default":""},"bgGradientAngle":{"type":"number","default":90},"contactInfoColor":{"type":"string","default":""},"contactNumberColor":{"type":"string","default":""},"availableInfoColor":{"type":"string","default":""}},"supports":{"html":false,"align":["left","right","full"]},"textdomain":"call-to-action-block","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-view.css","render":"file:./render.php","viewScript":["file:./view.js","react","react-dom"]}');
 
 /***/ }),
 
@@ -1644,7 +1811,11 @@ function Edit({
     description,
     buttonText,
     buttonUrl,
-    layoutStyle
+    layoutStyle,
+    contactIcon,
+    contactLabel,
+    contactNumber,
+    contactInfo
   } = attributes;
   console.log('Attributes in Edit:', attributes);
   const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps)({
@@ -1689,7 +1860,7 @@ function Edit({
     }), layoutStyle === 'simple' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
       className: `callToActionBlock ${layoutStyle}`,
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
-        className: "pContact004",
+        className: "pContact004 hero-content",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
           className: "pContact004__content",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("div", {
@@ -1700,7 +1871,7 @@ function Edit({
                 className: "pContact004__textArea",
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
                   tagName: "span",
-                  className: "sub",
+                  className: "sub-heading",
                   value: subHeading,
                   onChange: val => setAttributes({
                     subHeading: val
@@ -1730,16 +1901,16 @@ function Edit({
                   className: "pContact004__btnList",
                   children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("li", {
                     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("a", {
-                      href: "tel:000-000-0000",
+                      href: `tel:${contactNumber}`,
                       className: "ctaBtn tel-btn",
-                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("i", {
-                        class: "ri-phone-line"
-                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("span", {
                         className: "num",
-                        children: "0000-000-000"
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("i", {
+                          class: contactIcon
+                        }), contactLabel]
                       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
                         className: "sub",
-                        children: "Business hours: 9:00 - 18:00 (closed on weekends and holidays)"
+                        children: contactInfo
                       })]
                     })
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("li", {
@@ -1750,9 +1921,11 @@ function Edit({
                       })
                     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("a", {
                       href: buttonUrl,
-                      className: "ctaBtn mail-btn",
-                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("span", {
-                        children: buttonText
+                      className: "ctaBtn mail-btn cta-button",
+                      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("span", {
+                        children: [buttonText, " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("i", {
+                          class: "ri-arrow-right-s-line"
+                        })]
                       })
                     })]
                   })]

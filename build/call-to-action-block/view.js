@@ -63,7 +63,11 @@ const BlockName = ({
     description,
     buttonText,
     buttonUrl,
-    layoutStyle
+    layoutStyle,
+    contactIcon,
+    contactLabel,
+    contactNumber,
+    contactInfo
   } = attributes;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_Style__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -88,7 +92,7 @@ const BlockName = ({
     }), layoutStyle === 'simple' && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
       className: `callToActionBlock ${layoutStyle}`,
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-        className: "pContact004",
+        className: "pContact004 hero-content",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
           className: "pContact004__content",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
@@ -99,7 +103,7 @@ const BlockName = ({
                 className: "pContact004__textArea",
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText.Content, {
                   tagName: "span",
-                  className: "sub",
+                  className: "sub-heading",
                   value: subHeading
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.RichText.Content, {
                   tagName: headingTag,
@@ -117,14 +121,16 @@ const BlockName = ({
                   className: "pContact004__btnList",
                   children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("li", {
                     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("a", {
-                      href: "tel:000-000-0000",
+                      href: `tel:${contactNumber}`,
                       className: "ctaBtn tel-btn",
-                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("span", {
                         className: "num",
-                        children: "0000-000-000"
+                        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("i", {
+                          class: contactIcon
+                        }), contactLabel]
                       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
                         className: "sub",
-                        children: "Business hours: 9:00 - 18:00 (closed on weekends and holidays)"
+                        children: contactInfo
                       })]
                     })
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("li", {
@@ -135,7 +141,7 @@ const BlockName = ({
                       })
                     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
                       href: buttonUrl,
-                      className: "ctaBtn mail-btn",
+                      className: "ctaBtn mail-btn cta-button",
                       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
                         children: buttonText
                       })
@@ -225,7 +231,19 @@ const Style = ({
     bgGradient2,
     bgGradientAngle,
     sectionPadding,
-    sectionMargin
+    sectionMargin,
+    subHeadingFontSizeDesktop,
+    subHeadingLineHeightDesktop,
+    subHeadingFontFamily,
+    subHeadingFontWeight,
+    subHeadingTextTransform,
+    subHeadingColor,
+    subHeadingBgColor,
+    subHeadingPadding,
+    subHeadingMargin,
+    contactNumberColor,
+    contactInfoColor,
+    availableInfoColor
   } = attributes;
 
   /* ------------------------------------------------------------------
@@ -270,6 +288,8 @@ const Style = ({
   /* ------------------------------------------------------------------
      Padding / Margin for every element
      ------------------------------------------------------------------ */
+  const subHeadingPad = getResponsive(subHeadingPadding);
+  const subHeadingMar = getResponsive(subHeadingMargin);
   const headingPad = getResponsive(headingPadding);
   const headingMar = getResponsive(headingMargin);
   const descPad = getResponsive(descriptionPadding);
@@ -328,6 +348,16 @@ const Style = ({
                 .callToActionBlock {
                     text-align: ${attributes?.alignment || 'center'};
                 }
+                /* -------------------------------------------------
+				   SUB HEADING
+				   ------------------------------------------------- */
+				.wp-block-create-block-call-to-action-block .hero-content .sub-heading {
+					color: ${subHeadingColor || 'inherit'};
+                    background-color: ${subHeadingBgColor};
+					${typo('subHeading', subHeadingFontFamily, subHeadingFontWeight, subHeadingTextTransform, subHeadingFontSizeDesktop, subHeadingLineHeightDesktop)}
+					padding: ${subHeadingPad.desktop};
+					margin: ${subHeadingMar.desktop};
+				}
 
 				/* -------------------------------------------------
 				   HEADING
@@ -348,6 +378,18 @@ const Style = ({
 					padding: ${descPad.desktop};
 					margin: ${descMar.desktop};
 				}
+
+                .wp-block-create-block-call-to-action-block .hero-content .ctaBtn.tel-btn .num {
+                    color: ${contactNumberColor || 'inherit'};
+                }
+
+                .wp-block-create-block-call-to-action-block .hero-content .ctaBtn.tel-btn .sub {
+                    color: ${contactInfoColor || 'inherit'};
+                }
+
+                .wp-block-create-block-call-to-action-block .hero-content .call {
+                    color: ${availableInfoColor || 'inherit'};
+                }
 
 				/* -------------------------------------------------
 				   BUTTON

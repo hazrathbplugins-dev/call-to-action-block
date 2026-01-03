@@ -7,7 +7,7 @@ import Style from './Style';
 import Toolbar from './Components/Backend/Toolbar';
 
 export default function Edit({ attributes, setAttributes }) {
-	const { subHeading, headingTag, heading, description, buttonText, buttonUrl, layoutStyle } = attributes;
+	const { subHeading, headingTag, heading, description, buttonText, buttonUrl, layoutStyle, contactIcon,contactLabel, contactNumber, contactInfo } = attributes;
 	console.log('Attributes in Edit:', attributes);
 
 	const blockProps = useBlockProps({
@@ -42,14 +42,14 @@ export default function Edit({ attributes, setAttributes }) {
 				</div>
 			</div>}
 			{layoutStyle === 'simple' && <div className={`callToActionBlock ${layoutStyle}`}>
-				<div className="pContact004">
+				<div className="pContact004 hero-content">
 					<div className="pContact004__content">
 						<div className="pContact004__inner">
 							<div className="pContact004__innerItem">
 								<div className="pContact004__textArea">
 									<RichText
 										tagName="span"
-										className="sub"
+										className="sub-heading"
 										value={subHeading}
 										onChange={(val) => setAttributes({ subHeading: val })}
 										placeholder="Sub Heading..."
@@ -73,16 +73,15 @@ export default function Edit({ attributes, setAttributes }) {
 								<div className="pContact004__btnArea">
 									<ul className="pContact004__btnList">
 										<li>
-											<a href="tel:000-000-0000" className="ctaBtn tel-btn">
-												<i class="ri-phone-line"></i>
-												<span className="num">0000-000-000</span>
-												<span className="sub">Business hours: 9:00 - 18:00 (closed on weekends and holidays)</span>
+											<a href={`tel:${contactNumber}`} className="ctaBtn tel-btn">
+												<span className="num"><i class={contactIcon}></i>{contactLabel}</span>
+												<span className="sub">{contactInfo}</span>
 											</a>
 										</li>
 										<li>
 											<p className="call"><span>Available 24 hours a day</span></p>
-											<a href={buttonUrl} className="ctaBtn mail-btn">
-												<span>{buttonText}</span>
+											<a href={buttonUrl} className="ctaBtn mail-btn cta-button">
+												<span>{buttonText} <i class="ri-arrow-right-s-line"></i></span>
 											</a>
 										</li>
 									</ul>

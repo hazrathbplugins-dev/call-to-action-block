@@ -7,7 +7,7 @@ import DimensionControl from './Style/DimensionControl';
 import BackgroundColor from './Style/BackgroundColor';
 import IconSelector from './Style/IconSelector';
 function Settings({ attributes, setAttributes }) {
-    const { headingTag, alignment, headingColor, buttonText, buttonUrl, headingPadding, headingMargin, sectionPadding, sectionMargin, icon } = attributes;
+    const { layoutStyle, headingTag, alignment, headingColor, buttonText, buttonUrl, headingPadding, headingMargin, sectionPadding, sectionMargin, contactIcon, contactLabel, contactNumber, contactInfo } = attributes;
     {/* Inspector Settings */ }
     return (
         <>
@@ -46,6 +46,25 @@ function Settings({ attributes, setAttributes }) {
                         ]}
                         onChange={(value) => setAttributes({ alignment: value })}
                     />
+                    { layoutStyle == 'simple' && <TextControl
+                        label={__('Contact Label', 'call-to-action-block')}
+                        value={contactLabel}
+                        onChange={(value) => setAttributes({ contactLabel: value })}
+                    />}
+                    { layoutStyle == 'simple' && <IconSelector
+                        value={contactIcon}
+                        onChange={(contactIcon) => setAttributes({ contactIcon })}
+                    />}
+                    { layoutStyle == 'simple' && <TextControl
+                        label={__('Contact Number', 'call-to-action-block')}
+                        value={contactNumber}
+                        onChange={(value) => setAttributes({ contactNumber: value })}
+                    />}
+                    { layoutStyle == 'simple' && <TextControl
+                        label={__('Contact Info', 'call-to-action-block')}
+                        value={contactInfo}
+                        onChange={(value) => setAttributes({ contactInfo: value })}
+                    />}
                 </PanelBody>
                 <PanelBody title={__('Button', 'call-to-action-block')} initialOpen={false}>
                     <TextControl
@@ -73,11 +92,34 @@ function Settings({ attributes, setAttributes }) {
                         value={sectionMargin}
                         onChange={(newVal) => setAttributes({ sectionMargin: newVal })}
                     />
-                    <IconSelector
-                        value={icon}
-                        onChange={(icon) => setAttributes({ icon })}
-                    />
                 </PanelBody>
+                { layoutStyle == 'simple' && <PanelBody title={__('Sub Heading Styles', 'call-to-action-block')} initialOpen={false}>
+                    <TypographyControl attributes={attributes} setAttributes={setAttributes} prefix="subHeading" />
+                    <ColorControl
+                        label={__('Color', 'call-to-action-block')}
+                        value={attributes.subHeadingColor}
+                        onChange={(color) => setAttributes({ subHeadingColor: color })}
+                        defaultColor=""
+                        className="color-picker-control"
+                    />
+                    <ColorControl
+                        label={__('Background Color', 'call-to-action-block')}
+                        value={attributes.subHeadingBgColor}
+                        onChange={(color) => setAttributes({ subHeadingBgColor: color })}
+                        defaultColor=""
+                        className="color-picker-control"
+                    />
+                    <DimensionControl
+                        label="Padding"
+                        value={attributes.subHeadingPadding}
+                        onChange={(newVal) => setAttributes({ subHeadingPadding: newVal })}
+                    />
+                    <DimensionControl
+                        label="Margin"
+                        value={attributes.subHeadingMargin}
+                        onChange={(newVal) => setAttributes({ subHeadingMargin: newVal })}
+                    />
+                </PanelBody>}
                 <PanelBody title={__('Heading Styles', 'call-to-action-block')} initialOpen={false}>
                     <TypographyControl attributes={attributes} setAttributes={setAttributes} prefix="heading" />
                     <ColorControl
@@ -146,6 +188,42 @@ function Settings({ attributes, setAttributes }) {
                     />
                 </PanelBody>
             </InspectorControls>
+            { layoutStyle === 'simple' && <InspectorControls group="styles">
+                <PanelBody title={__('Contact Number Styles', 'call-to-action-block')} initialOpen={false}>
+                    <TypographyControl attributes={attributes} setAttributes={setAttributes} prefix="subHeading" />
+                    <ColorControl
+                        label={__('Color', 'call-to-action-block')}
+                        value={attributes.contactNumberColor}
+                        onChange={(color) => setAttributes({ contactNumberColor: color })}
+                        defaultColor=""
+                        className="color-picker-control"
+                    />
+                </PanelBody>
+            </InspectorControls>}
+            { layoutStyle === 'simple' && <InspectorControls group="styles">
+                <PanelBody title={__('Contact Info Styles', 'call-to-action-block')} initialOpen={false}>
+                    <TypographyControl attributes={attributes} setAttributes={setAttributes} prefix="subHeading" />
+                    <ColorControl
+                        label={__('Color', 'call-to-action-block')}
+                        value={attributes.contactInfoColor}
+                        onChange={(color) => setAttributes({ contactInfoColor: color })}
+                        defaultColor=""
+                        className="color-picker-control"
+                    />
+                </PanelBody>
+            </InspectorControls>}
+            { layoutStyle === 'simple' && <InspectorControls group="styles">
+                <PanelBody title={__('Available Info Styles', 'call-to-action-block')} initialOpen={false}>
+                    <TypographyControl attributes={attributes} setAttributes={setAttributes} prefix="subHeading" />
+                    <ColorControl
+                        label={__('Color', 'call-to-action-block')}
+                        value={attributes.availableInfoColor}
+                        onChange={(color) => setAttributes({ availableInfoColor: color })}
+                        defaultColor=""
+                        className="color-picker-control"
+                    />
+                </PanelBody>
+            </InspectorControls>}
         </>
     )
 }

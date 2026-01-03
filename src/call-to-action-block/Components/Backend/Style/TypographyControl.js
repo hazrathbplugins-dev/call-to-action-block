@@ -34,6 +34,17 @@ export const TypographyControl = ({ attributes, setAttributes, prefix }) => {
 	const resetTypography = () => {
 		// Default values based on prefix (heading or subHeading)
 		const defaults = {
+			subHeading: {
+				FontFamily: '',
+				FontWeight: '600',
+				TextTransform: 'none',
+				FontSizeDesktop: 12,
+				FontSizeTablet: 12,
+				FontSizeMobile: 12,
+				LineHeightDesktop: 1.3,
+				LineHeightTablet: 1.4,
+				LineHeightMobile: 1.5
+			},
 			heading: {
 				FontFamily: '',
 				FontWeight: '700',

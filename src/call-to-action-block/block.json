@@ -539,6 +539,42 @@
 			"type": "string",
 			"default": ""
 		},
+		"contactInfoFontFamily": {
+			"type": "string",
+			"default": ""
+		},
+		"contactInfoFontSizeDesktop": {
+			"type": "number",
+			"default": 16
+		},
+		"contactInfoFontSizeTablet": {
+			"type": "number",
+			"default": 16
+		},
+		"contactInfoFontSizeMobile": {
+			"type": "number",
+			"default": 16
+		},
+		"contactInfoFontWeight": {
+			"type": "string",
+			"default": ""
+		},
+		"contactInfoTextTransform": {
+			"type": "string",
+			"default": "none"
+		},
+		"contactInfoLineHeightDesktop": {
+			"type": "number",
+			"default": 1.1
+		},
+		"contactInfoLineHeightTablet": {
+			"type": "number",
+			"default": 1.2
+		},
+		"contactInfoLineHeightMobile": {
+			"type": "number",
+			"default": 1.3
+		},
 		"contactNumberColor": {
 			"type": "string",
 			"default": ""

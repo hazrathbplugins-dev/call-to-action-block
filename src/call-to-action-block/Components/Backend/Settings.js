@@ -202,7 +202,7 @@ function Settings({ attributes, setAttributes }) {
             </InspectorControls>}
             { layoutStyle === 'simple' && <InspectorControls group="styles">
                 <PanelBody title={__('Contact Info Styles', 'call-to-action-block')} initialOpen={false}>
-                    <TypographyControl attributes={attributes} setAttributes={setAttributes} prefix="subHeading" />
+                    <TypographyControl attributes={attributes} setAttributes={setAttributes} prefix="contactInfo" />
                     <ColorControl
                         label={__('Color', 'call-to-action-block')}
                         value={attributes.contactInfoColor}

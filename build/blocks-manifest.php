@@ -544,6 +544,42 @@ return array(
 				'type' => 'string',
 				'default' => ''
 			),
+			'contactInfoFontFamily' => array(
+				'type' => 'string',
+				'default' => ''
+			),
+			'contactInfoFontSizeDesktop' => array(
+				'type' => 'number',
+				'default' => 16
+			),
+			'contactInfoFontSizeTablet' => array(
+				'type' => 'number',
+				'default' => 16
+			),
+			'contactInfoFontSizeMobile' => array(
+				'type' => 'number',
+				'default' => 16
+			),
+			'contactInfoFontWeight' => array(
+				'type' => 'string',
+				'default' => ''
+			),
+			'contactInfoTextTransform' => array(
+				'type' => 'string',
+				'default' => 'none'
+			),
+			'contactInfoLineHeightDesktop' => array(
+				'type' => 'number',
+				'default' => 1.1
+			),
+			'contactInfoLineHeightTablet' => array(
+				'type' => 'number',
+				'default' => 1.2
+			),
+			'contactInfoLineHeightMobile' => array(
+				'type' => 'number',
+				'default' => 1.3
+			),
 			'contactNumberColor' => array(
 				'type' => 'string',
 				'default' => ''
